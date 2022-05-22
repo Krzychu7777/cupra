@@ -1,0 +1,75 @@
+.top-section {
+    background: url('img/Cupra_top-section.png');
+    min-height: 85vh;
+    background-position: 85% 100%;
+    background-size: cover;
+}
+
+.splide__arrow {
+    border-radius: 0px;
+}
+
+.siema::before{
+    position: absolute;
+    content: "";
+    background: linear-gradient(to right, #F5F5F5 , transparent);
+    height: 100%;
+    width: 30%;
+    left: 0;
+    top: 0;
+    opacity: 0.7;
+    z-index: 1;
+}
+.siema::after{
+    position: absolute;
+    content: "";
+    background: linear-gradient(to left, #F5F5F5 , transparent);
+    height: 100%;
+    width: 30%;
+    right: 0;
+    top: 0;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+@media screen and (max-width: 1536px) {
+    .siema::before {
+        display: none;
+    }
+    .siema::after {
+        display: none;
+    }
+}
+
+   
+#galeria .splide__pagination__page {
+    border-radius: 0px;
+    width: 20px;
+    height: 5px;
+    background-color: #474747;
+    margin-left: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#galeria .splide__pagination__page.is-active {
+    background-color: white;
+    height: 5px;
+    width: 20px;
+}
+
+.border-custom {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: gray;
+    top: -20px;
+}
+
+.border-custom1 {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: gray;
+    bottom: -20px;
+}
