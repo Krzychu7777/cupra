@@ -75,6 +75,9 @@ const contactPhoneTop = document.getElementById('contact-phone__top')
 const contactMessageTop = document.getElementById('message__top')
 const contactErrorTop = document.getElementById('error-contact__top');
 
+const checkBoxes = document.querySelectorAll('input[name="contact[]"]');
+
+
 
 //menu
 toggle.addEventListener('click',  () => {
@@ -145,14 +148,20 @@ function setSuccess(successClass, errorAlert) {
     successClass.classList.add('success');
     errorAlert.classList.add('hidden')
     successClass.innerHTML = "";
-    btnSubmit.style.opacity = "";
+    // btnSubmit.style.opacity = "";
 };
 function setError(errorClass, successClass, errorInformation) {
     errorClass.innerHTML = errorInformation;
     successClass.classList.remove('success');
     errorClass.classList.remove('hidden');
-    btnSubmit.style.opacity = "0.3";
+    // btnSubmit.style.opacity = "0.3";
 };
+
+checkBoxes.forEach((item, index) => {
+    item.addEventListener('change', () => {
+        contactError.innerHTML = "";
+    });
+});
 
 function validateInputs(input, success, error, infoErorr) {
     if (input.validity.valid) {
@@ -175,46 +184,12 @@ function agreeValidate() {
      } 
 };
 
-checkboxs.forEach((checkboxs) => {
-    checkboxs.addEventListener('change', () => {
-        if(checkboxs.checked == true) {
-            contactError.innerHTML = "";            
-        }
-    });
-});
-
 function requiredInputs(inputs, errors, event) {
     if(!inputs.validity.valid) {
         errors.innerHTML = "To pole jest wymagane!";
         event.preventDefault();
     }
 };
-
-function contactCheck(check1, check2, check3, event) {
-    if(check1.checked == true) {
-        checked = true;
-    } else if (check2.checked == true) {
-        checked = true;
-    } else if(check3.checked == true) {
-        checked = true;
-    } else {
-        checked = false;
-        contactError.innerHTML = "Zaznacz formę kontaktu!";
-        event.preventDefault();
-    }
-
-    if (checked == false) {
-        event.preventDefault();
-    }
-};
-
-
-// const checkedBox = [...checkboxs].filter((item) => 
-//     item.classList.contains()
-// );
-
-// console.log(checkedBox);
-
 
 function agreeCheck(agreeCheck, agreeCheckError, event) {
     if(agreeCheck.checked == false) {
@@ -243,44 +218,52 @@ lastName.addEventListener('input', () => {
 });
 
 form.addEventListener('submit', (e) => {
-    console.log(e);
-    contactCheck(contactEmail, contactPhone, contactMessage, e);
+    const checkedBoxes = [...checkBoxes].filter((item) => {
+        return item.checked;
+    });
+    if(checkedBoxes == "") {
+        contactError.innerHTML = "Zaznacz formę kontaktu!";
+       e. preventDefault();
+    }
     agreeCheck(agree, agreeError, e);
     requiredInputs(email, errorEmail, e);
     requiredInputs(username, errorName, e);
     requiredInputs(phone, errorPhone, e);
     location.href = "#jazda-probna";
-});
 
+    // checkBoxes.forEach((item) => {
+    //     if (checkedBoxes == "") {
+    //     item.style.borderColor = "red";
+    //     }
+    // });
+});
 
 //validation form Top
 
-agree.addEventListener('change', () => {
+agreeTop.addEventListener('change', () => {
     agreeValidate();
 })
-email.addEventListener('input', () => {
+emailTop.addEventListener('input', () => {
     validateInputs(emailTop, successEmailTop, errorEmailTop, "To pole jest wymagane!");
 });
-username.addEventListener('input', () => {
+usernameTop.addEventListener('input', () => {
     validateInputs(usernameTop, successNameTop, errorNameTop, "To pole jest wymagane!");
 });
-phone.addEventListener('input', () => {
+phoneTop.addEventListener('input', () => {
     validateInputs(phoneTop, successPhoneTop, errorPhoneTop, "To pole jest wymagane!");
     phoneTop.value=phoneTop.value.replace(' ', '');
     phoneTop.value=phoneTop.value.replace(/[^\d, +,' ']/, '');   
 });
-lastName.addEventListener('input', () => {
+lastNameTop.addEventListener('input', () => {
     validateInputs(lastNameTop, successLastNameTop, errorLastNameTop, "")
 });
 
 formTop.addEventListener('submit', (e) => {
-    console.log(e);
-    contactCheck(contactEmailTop, contactPhoneTop, contactMessageTop, e);
+    contactCheck(contactEmailTop, contactPhoneTop, contactMessageTop, contactErrorTop, e);
     agreeCheck(agreeTop, agreeErrorTop, e);
     requiredInputs(emailTop, errorEmailTop, e);
     requiredInputs(usernameTop, errorNameTop, e);
     requiredInputs(phoneTop, errorPhoneTop, e);
-    location.href = "#jazda-probna";
 });
 
 
@@ -309,6 +292,9 @@ var splide = new Splide( '#auta', {
         1536: {
                     perPage: 1,
                 },
+        1024: {
+            drag: false,
+        },
             },
     pagination: false,
     speed: 1500,
@@ -326,6 +312,9 @@ var splide = new Splide( '#galeria', {
         510: {
             perPage: 1,
         },
+        1024: {
+            drag: false,
+        },
             },
   rewind : true,
   speed: 1400
@@ -336,6 +325,11 @@ splide.mount();
 var splide = new Splide( '#slider1', {
     type: 'loop',
     pagination: false,
+    breakpoints: {
+        1024: {
+            drag: false,
+        },
+            },
     speed: 1100
 });
 
@@ -344,6 +338,11 @@ splide.mount();
 var splide = new Splide( '#slider2', {
     type: 'loop',
     pagination: false,
+    breakpoints: {
+        1024: {
+            drag: false,
+        },
+            },
     speed: 1100
 });
 
@@ -352,6 +351,11 @@ splide.mount();
 var splide = new Splide( '#slider3', {
     type: 'loop',
     pagination: false,
+    breakpoints: {
+        1024: {
+            drag: false,
+        },
+            },
     speed: 1100
 });
 

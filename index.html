@@ -37,7 +37,7 @@
     <header class="sticky top-0 z-50">
         <div class="w-full sticky top-0 left-0 h-[74px] justify-between xl:h-[85px] bg-[#F5F5F5] z-50">
             <nav class="container mx-auto hidden xl:flex items-center justify-between h-[85px] w-[1400px] desktop-menu">
-                <a href="#home"><img class="xl:mr-3" src="img/cupra-1.svg" alt=""></a>
+                <a href="#home"><img class="xl:mr-3" src="img/cupra-1.svg" alt="Cupra logo" loading="lazy"></a>
                     <ul class="flex space-x-3 2xl:space-x-10 2xl:text-lg font-light text-lg text-[#242221]">
                         <li><a href="#samochody" class="hover:underline">Samochody</a></li>
                         <li><a href="#jazda-probna" class="hover:underline">Jazda Próbna</a></li>
@@ -51,7 +51,7 @@
                     </div>
                 </nav>
                 <nav class="xl:hidden flex items-center justify-between h-[74px] px-3 sm:px-10 md:px-20 z-50">
-                    <a id="image-mobile" href="#home"><img class="xl:mr-3" src="img/cupra-1.svg" alt=""></a>
+                    <a id="image-mobile" href="#home"><img class="xl:mr-3" src="img/cupra-1.svg" alt="Cupra logo" loading="lazy"></a>
                     <div class="toggler">
                         <button class="hamburger-menu">
                             <span class="hamburger-bars"></span>
@@ -59,7 +59,7 @@
                     </div>
                 </nav>
         </div>
-        <div class="xl:hidden flex flex-col fixed h-auto left-0 w-full bg-[#F5F5F5] justify-center items-center space-y-10 py-4 mobile-menu text-lg z-auto duration-500">
+        <div class="xl:hidden flex flex-col fixed h-auto left-0 w-full bg-[#F5F5F5] justify-center items-center space-y-10 py-4 mobile-menu text-lg z-auto duration-500 z-40">
             <ul class="space-y-3 text-center font-light text-[#242221]">
                 <li><a href="#samochody" class="hover:underline nav__items">Samochody</a></li>
                 <li><a href="#jazda-probna" class="hover:underline nav__items">Jazda Próbna</a></li>
@@ -74,7 +74,7 @@
         </div>
         <section class="fixed top-0 h-full w-full bg-[#F5F5F5] z-30 overflow-scroll overflow-x-hidden test--drive--card">
             <div class="absolute flex flex-row top-[15%] sm:top-[10%] left-[50%] -translate-x-2/4 md:left-[15%] space-x-3 cursor-pointer offer-toggler hover:opacity-40 duration-300 z-30">
-                <img src="img/form2_arrow.svg" alt="">
+                <img src="img/form2_arrow.svg" alt="przycisk powrót" loading="lazy">
                 <p class="font-semibold">Powrót</p>
             </div>
             <div class="relative container mx-auto top-[85px] md:w-[60%] lg:w-[50%] xl:w-[40%] 3xl:w-[30%] py-[104px]">
@@ -84,29 +84,29 @@
                 </div>
                 <div class="mt-[15%] dropdown">
                     <ul class="container__items">
-                        <li class="item__selected flex flex-col sm:flex-row items-center justify-center relative border-solid border-[1px] border-gray-300 sm:pl-7 cursor-pointer sm:ml-[50px] mx-auto duration-150">
-                            <img id="image-selected__top" class="image-selected sm:ml-[-150px] z-10" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="">
-                            <p id="text-select__top" class="text-select w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Cupra Formentor</p>
-                            <img class="arrow duration-300" src="img/arrow-down_form.svg" alt="">
+                        <li class="item__selected flex flex-col sm:flex-row items-center justify-center relative border-solid border-[1px] border-gray-300 sm:pl-7 cursor-pointer sm:ml-[50px] mx-auto z-20 select-none pb-5 sm:pb-0">
+                            <img id="image-selected__top" style="width: 306px; height: 139px;" class="image-selected sm:ml-[-150px] z-10" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentor" loading="lazy">
+                            <p id="text-select__top" class="w-[200px] text-center sm:text-left sm:ml-8 pb-3 sm:pb-0">Cupra Formentor</p>
+                            <img style="width: 3%;" class="arrow duration-300" src="img/arrow-down_form.svg" alt="">
                         </li>
-                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto duration-250 first-item">
-                            <img class="sm:ml-[-150px] z-10" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="">
+                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto first-item z-10">
+                            <img style="width: 306px; height: 139px;" class="sm:ml-[-150px] z-10" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentor" loading="lazy">
                             <p class="w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Cupra Formentor</p>
                         </li>
-                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto duration-350">
-                            <img class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale-5.png" alt="">
+                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto z-10">
+                            <img style="width: 306px; height: 139px;" class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale-5.png" alt="Cupra Leon" loading="lazy">
                             <p class="w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Cupra Leon</p>
                         </li>
-                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto duration-150">
-                            <img class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale-5-sportstourer.png" alt="">
+                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto z-10">
+                            <img style="width: 306px; height: 139px;" class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale-5-sportstourer.png" alt="Cupra Leon Sportstourer" loading="lazy">
                             <p class="w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Cupra Leon Sportstourer</p>
                         </li>
-                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto duration-150">
-                            <img class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale0-5-ateca.png" alt="">
+                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto z-10">
+                            <img style="width: 306px; height: 139px;" class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale0-5-ateca.png" alt="Cupra Ateca" loading="lazy">
                             <p class="w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Cupra Ateca</p>
                         </li>
-                        <li class="item options last-dropdown flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto duration-150">
-                            <img class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale-5-nowa.png" alt="">
+                        <li class="item options last-dropdown flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto z-10">
+                            <img style="width: 306px; height: 139px;" class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale-5-nowa.png" alt="Nowa Cupra Born" loading="lazy">
                             <p class="w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Nowa Cupra Born</p>
                         </li>
                     </ul>
@@ -178,11 +178,11 @@
                 <p class="block sm:text-xl opacity-50 mb-14">Zobacz, poczuj i przekonaj się, czym jest CUPRA. Poznaj samochody, które są wyjątkowym połączeniem technologii, mocy, elegancji i komfortu.</p>
             </div>
             <div class="">
-                <img style="width: 100%;" class="border-box " src="img/CUPRA-FORMENTOR-048.png" alt="">
+                <img style="width: 100%;" class="border-box " src="img/CUPRA-FORMENTOR-048.png" alt="Cupra Formentor" loading="lazy">
                 <p class="text-center 1xl:text-left mt-4 text-lg opacity-50">Design inspirowany wyścigami, stworzony z niezwykłą dbałością o detale.</p>
             </div>
             <div class="xl:ml-14 mt-20 ">
-                <img style="width: 100%;" src="img/CUPRA-FORMENTOR-002.png" alt="">
+                <img style="width: 100%;" src="img/CUPRA-FORMENTOR-002.png" alt="Cupra Formentor" loading="lazy">
                 <p class="text-center 1xl:text-left mt-4 sm:text-lg opacity-50">Podróżuj z rozmachem bez kompromisów</p>
             </div>
             <div class="max-w-md md:max-w-xl lg:max-w-6xl 2xl:max-w-2xl mt-16 2xl:-mt-[11%] space-y-7 text-center 2xl:text-left">
@@ -201,7 +201,7 @@
                               <h1 class="text-4xl lg:text-6xl">CUPRA Formentor VZ</h1>
                           </div>
                           <div class="w-auto mx-auto my-16">
-                              <img src="img/image-38.png" alt="">
+                              <img style="width: 100%;" src="img/image-38.png" alt="Cupra Formentor VZ" loading="lazy">
                           </div>
                           <div class="w-auto mx-auto font-light">
                               <p class="text-center">Maksymalna prędkość: 250 KM/H Moc silnika: 310 KM</p>
@@ -228,7 +228,7 @@
                               <h1 class="text-4xl lg:text-6xl">CUPRA Formentor</h1>
                           </div>
                           <div class="w-auto mx-auto my-16">
-                              <img src="img/image-38.png" alt="">
+                              <img style="width: 100%;" src="img/image-38.png" alt="Cupra Formentor" loading="lazy">
                           </div>
                           <div class="w-auto mx-auto">
                               <p class="text-center">Maksymalna prędkość: 204 KM/H Moc silnika: 150 KM</p>
@@ -255,7 +255,7 @@
                               <h1 class="text-4xl lg:text-6xl">CUPRA Ateca</h1>
                           </div>
                           <div class="w-auto mx-auto my-16">
-                              <img src="img/imageAteca.png" alt="">
+                              <img style="width: 100%;" src="img/imageAteca.png" alt="Cupra Ateca" loading="lazy">
                           </div>
                           <div class="w-auto mx-auto">
                               <p class="text-center">Maksymalna prędkość: 247 KM/H Moc silnika: 300 KM</p>
@@ -282,7 +282,7 @@
                                 <h1 class="text-4xl lg:text-6xl">Nowa CUPRA Born</h1>
                             </div>
                             <div class="w-auto mx-auto my-16">
-                                <img src="img/image-38-Cupara-B.png" alt="">
+                                <img style="width: 100%;" src="img/image-38-Cupara-B.png" alt="Nowa Cupra Born" loading="lazy">
                             </div>
                             <div class="w-auto mx-auto">
                                 <p class="text-center">Akumulator 58 kWh moc do 204 KM<sup>2</sup></p>
@@ -309,7 +309,7 @@
                                 <h1 class="text-4xl lg:text-6xl">Leon</h1>
                             </div>
                             <div class="w-auto mx-auto my-16">
-                                <img src="img/cupra_leon.png" alt="">
+                                <img style="width: 100%;" src="img/cupra_leon.png" alt="Cupra Leon" loading="lazy">
                             </div>
                             <div class="w-auto mx-auto">
                                 <p class="text-center">Maksymalna prędkość: 245 KM/H Moc silnika: 300 KM</p>
@@ -336,7 +336,7 @@
                                 <h1 class="text-4xl lg:text-6xl">Leon Sportstourer</h1>
                             </div>
                             <div class="w-auto mx-auto my-16">
-                                <img src="img/cupra-leon-sport.png" alt="">
+                                <img style="width: 100%;" src="img/cupra-leon-sport.png" alt="Cuora Leon Sportstourer" loading="lazy">
                             </div>
                             <div class="w-auto mx-auto">
                                 <p class="text-center">Maksymalna prędkość: 250 KM/H Moc silnika: 310 KM</p>
@@ -370,7 +370,7 @@
         <section id="galeria" class="splide min-h-[90vh] bg-[#1B1B1B] w-full relative py-20 p-4">
             <div class="container mx-auto grid grid-rows-1 gap-4 sm:w-[77%] mx-auto">
                 <div class="w-full mx-auto relative">
-                    <img class="hidden sm:block" src="img/CUPRA-FORMENTOR-4161.png" alt="">
+                    <img style="width: 100%;" class="hidden sm:block" src="img/CUPRA-FORMENTOR-4161.png" alt="Cupra Formentor" loading="lazy">
                     <div class="image-formentor sm:hidden"></div>
                     <h1 class="uppercase absolute bottom-4 left-4 md:bottom-10 md:left-10 text-white text-2xl sm:text-4xl lg:text-6xl opacity-85 font-light">Cupra Formentor</h1>
                 </div>
@@ -392,56 +392,56 @@
                           <ul class="splide__list">
                               <li class="splide__slide">
                                 <div class="relative md:px-0 text-center md:text-left w-[90%] 2xl:w-[95%] container mx-auto text-center xl:text-left">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-218.png" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-218.png" alt="Cupra Formentor Slider" loading="lazy">
                                     <h3 class="text-lg text-white opacity-95 my-4">Tyle mocy ile potrzebujesz</h3>
                                     <p class="text-white md:text-lg font-thin opacity-50 font-light">Cupra <span class="font-semibold">Formentor</span> oferuje Ci szeroką gamę wersji napędu poczynając od 1.5 TSI o mocy 150 KM, na 1.4 e-HYBRID o mocy 204KM kończąc. Najwyższymi parametrami cechuje się wersja <span class="font-semibold">Formentor VZ</span>, którą napędza 2-litrowy silnik o mocy 310 KM. </p>
                                 </div>
                               </li>
                               <li class="splide__slide">
                                 <div class="relative md:px-0 text-center md:text-left w-[90%] 2xl:w-[95%] container mx-auto text-center xl:text-left">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-210.png" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-210.png" alt="Cupra Formentor Slider" loading="lazy">
                                     <h3 class="text-lg text-white opacity-95 my-4">Technologia dostosowana do Ciebie.</h3>
                                     <p class="text-white md:text-lg font-thin opacity-50 font-light">Liczne funkcje zapewniające kierowcy łączność z samochodem oraz wzbogacające wrażenia z jazdy. </p>
                                 </div>
                               </li>
                               <li class="splide__slide">
                                 <div class="relative md:px-0 text-center md:text-left w-[90%] 2xl:w-[95%] container mx-auto text-center xl:text-left">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-216.png" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-216.png" alt="Cupra Formentor Slider" loading="lazy">
                                     <h3 class="text-lg text-white opacity-95 my-4">Odważny design.</h3>
                                     <p class="text-white md:text-lg font-thin opacity-50 font-light">Wyjątkowo elegancka, wyrzeźbiona linia nadwozia. Dynamiczny spojler i drapieżny przód z powiększonymi wlotami powietrza. </p>
                                 </div>
                               </li>
                               <li class="splide__slide">
                                 <div class="relative md:px-0 text-center md:text-left w-[90%] 2xl:w-[95%] container mx-auto text-center xl:text-left">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-213.png" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-213.png" alt="Cupra Formentor Slider" loading="lazy">
                                     <h3 class="text-lg text-white opacity-95 my-4">Doskonała siła hamowania</h3>
                                     <p class="text-white md:text-lg font-thin opacity-50 font-light">Przykuwające wzrok wentylowane hamulce tarczowe Brembo w kolorze miedzi CUPRA. </p>
                                 </div>
                               </li>
                               <li class="splide__slide">
                                 <div class="relative container mx-auto w-[90%] 2xl:w-[95%] text-center xl:text-left">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-040.png" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-040.png" alt="Cupra Formentor Slider" loading="lazy">
                                     <h3 class="text-lg text-white opacity-95 my-4">Aerodynamika na najwyższym poziomie.</h3>
                                     <p class="text-white md:text-lg font-thin opacity-50 font-light">Dopasowany spojler. Płynna, opływowa, wyrzeźbiona linia nadwozia.</p>
                                 </div>
                               </li>
                               <li class="splide__slide">
                                 <div class="relative container mx-auto w-[90%] 2xl:w-[95%] text-center xl:text-left">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-208.png" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-208.png" alt="Cupra Formentor Slider" loading="lazy">
                                     <h3 class="text-lg text-white opacity-95 my-4">Unikalny dźwięk silnika.</h3>
                                     <p class="text-white md:text-lg font-thin opacity-50 font-light">4 końcówki układu wydechowego w matowo-czarnym kolorze zapewniają wzmocniony, wyrazisty dźwięk „CUPRA”.</p>
                                 </div>
                               </li> 
                               <li class="splide__slide">
                                 <div class="relative container mx-auto w-[90%] 2xl:w-[95%] text-center xl:text-left">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-099.png" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-099.png" alt="Cupra Formentor Slider" loading="lazy">
                                     <h3 class="text-lg text-white opacity-95 my-4">Czysta moc</h3>
                                     <p class="text-white md:text-lg font-thin opacity-50 font-light">Włącz tryb CUPRA i poczuj maksymalną moc i adrenalinę.</p>
                                 </div>
                               </li>
                               <li class="splide__slide">
                                 <div class="relative container mx-auto w-[90%] 2xl:w-[95%] text-center xl:text-left">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-080.png" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-080.png" alt="Cupra Formentor Slider" loading="lazy">
                                     <h3 class="text-lg text-white opacity-95 my-4">Pełna kontrola </h3>
                                     <p class="text-white md:text-lg font-thin opacity-50 font-light">Na Wirtualnym Kokpicie wybierz profil jazdy CUPRA. Dopasowany do sportowych osiągów i wrażeń. </p>
                                 </div>
@@ -462,13 +462,13 @@
                         <div class="splide__track">
                             <ul class="splide__list">
                                 <li class="splide__slide">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-294.jpg" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-294.jpg" alt="Cupra Formentor Technologia" loading="lazy">
                                 </li>
                                 <li class="splide__slide">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-068.jpg" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-068.jpg" alt="Cupra Formentor Technologia" loading="lazy">
                                 </li>
                                 <li class="splide__slide">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-090.jpg" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-090.jpg" alt="Cupra Formentor Technologia" loading="lazy">
                                 </li>
                             </ul>
                       </div>
@@ -497,13 +497,13 @@
                         <div class="splide__track">
                             <ul class="splide__list">
                                 <li class="splide__slide">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-418.jpg" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-418.jpg" alt="Cupra Formentor Potęga Designu" loading="lazy">
                                 </li>
                                 <li class="splide__slide">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-408.jpg" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-408.jpg" alt="Cupra Formentor Potęga Designu" loading="lazy">
                                 </li>
                                 <li class="splide__slide">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-048.jpg" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-048.jpg" alt="Cupra Formentor Potęga Designu" loading="lazy">
                                 </li>
                             </ul>
                       </div>
@@ -520,13 +520,13 @@
                         <div class="splide__track">
                             <ul class="splide__list">
                                 <li class="splide__slide">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-381.jpg" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-381.jpg" alt="Cupra Formentor Design Wnętrza" loading="lazy">
                                 </li>
                                 <li class="splide__slide">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-070.jpg" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-070.jpg" alt="Cupra Formentor Design Wnętrza" loading="lazy">
                                 </li>
                                 <li class="splide__slide">
-                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-VZ5-083.jpg" alt="">
+                                    <img style="width: 100%;" src="img/CUPRA-FORMENTOR-VZ5-083.jpg" alt="Cupra Formentor Design Wnętrza" loading="lazy">
                                 </li>
                             </ul>
                       </div>
@@ -553,30 +553,30 @@
                     <h1 class="text-2xl sm:text-4xl w-[80%] text-center mx-auto mt-5 font-light">Umów się na bezpłatną jazdę próbną</h1>
                 </div>
                 <div class="mt-[15%] dropdown">
+                        <div class="item__selected flex flex-col sm:flex-row bg-[#F5F5F5] items-center justify-center relative border-solid border-[1px] border-gray-300 sm:px-7 cursor-pointer sm:ml-[50px] mx-auto select-none pb-5 sm:pb-0">
+                            <img style="width: 306px; height: 139px;" id="image-selected" class="sm:ml-[-150px] z-10" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentr" loading="lazy">
+                            <p id="text-select" class="w-[200px] text-center sm:text-left sm:ml-3 pb-3 sm:pb-0">Cupra Formentor</p>
+                            <img style="width: 3%;" class="arrow duration-300" src="img/arrow-down_form.svg" alt="Strzałka wyboru">
+                    </div>
                     <ul class="container__items">
-                        <li class="item__selected flex flex-col sm:flex-row bg-[#F5F5F5] items-center justify-center relative border-solid border-[1px] border-gray-300 sm:px-7 cursor-pointer sm:ml-[50px] mx-auto select-none">
-                            <img id="image-selected" class="sm:ml-[-150px] z-10" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="">
-                            <p id="text-select" class="w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Cupra Formentor</p>
-                            <img class="arrow duration-300" src="img/arrow-down_form.svg" alt="">
-                        </li>
-                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto first-item">
-                            <img class="sm:ml-[-150px] z-10" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="">
+                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto">
+                            <img style="width: 306px; height: 139px;" class="sm:ml-[-150px] z-10" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentor" loading="lazy">
                             <p class="w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Cupra Formentor</p>
                         </li>
                         <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto">
-                            <img class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale-5.png" alt="">
+                            <img style="width: 306px; height: 139px;" class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale-5.png" alt="Cupra Leon" loading="lazy">
                             <p class="w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Cupra Leon</p>
                         </li>
                         <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto">
-                            <img class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale-5-sportstourer.png" alt="">
+                            <img style="width: 306px; height: 139px;" class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale-5-sportstourer.png" alt="Cuora Leon Sportstourer" loading="lazy">
                             <p class="w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Cupra Leon Sportstourer</p>
                         </li>
                         <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto">
-                            <img class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale0-5-ateca.png" alt="">
+                            <img style="width: 306px; height: 139px;" class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale0-5-ateca.png" alt="cupra Ateca" loading="lazy">
                             <p class="w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Cupra Ateca</p>
                         </li>
-                        <li class="item options last-dropdown flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto">
-                            <img class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale-5-nowa.png" alt="">
+                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto">
+                            <img style="width: 306px; height: 139px;" class="sm:ml-[-150px] z-10" src="img/_jcr_content.resizedViewPort.scale-5-nowa.png" alt="Nowa Cupra Borns" loading="lazy">
                             <p class="w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Nowa Cupra Born</p>
                         </li>
                     </ul>
@@ -612,15 +612,16 @@
                         </div>
                         <p id="error-contact" class="mt-5 mb-[-10px] text-sm flex flex-wrap text-[#FF0000]"></p>
                         <div class="flex flex-row justify-start space-x-2 text-sm items-start min-h-[10px] my-8">
-                            <input type="checkbox" id="mail" name="contact" value="mail">
+                            <input type="checkbox" id="mail" name="contact[]" class="" value="mail">
                             <label for="mail">E-Mail</label>
+                        
                         </div>
                         <div class="flex flex-row justify-start space-x-2 text-sm items-start min-h-[10px] mb-8">
-                            <input type="checkbox" id="contact-phone" name="contact" value="phone" class="checked">
+                            <input type="checkbox" id="contact-phone" name="contact[]" class="" value="phone" class="checked">
                             <label for="phone">Telefon</label>
                         </div>
                         <div class="flex flex-row justify-start space-x-2 text-sm items-start min-h-[10px] mb-8">
-                            <input type="checkbox" id="message" name="contact" value="message">
+                            <input type="checkbox" id="message" name="contact[]" class="" value="message">
                             <label for="message">Wiadomości SMS/MMS</label>
                         </div>
                         <p class="mb-7 text-sm flex flex-wrap">Masz prawo do wglądu, modyfikacji, ograniczenia przetwarzania i usunięcia swoich danych oraz do wycofania w każdym momencie swojej zgody.</p>
@@ -638,7 +639,7 @@
                 </div>
                 <div class="flex flex-wrap justify-center items-center mt-[20%] sm:mt-[10%] lg:mt-[6%] space-y-10 lg:space-y-0">
                     <div class="flex flex-col sm:basis-2/4 lg:basis-[40%] xl:basis-[30%] 2xl:basis-1/4 sm:mx-5 h-[600px]">
-                        <div class="bg-gray-500"><img style="width: 100%" src="img/CUPRA-FORMENTOR-030.png" alt=""></div>
+                        <div class="bg-gray-500"><img style="width: 100%" src="img/CUPRA-FORMENTOR-030.png" alt="Cupra formentor" loading="lazy"></div>
                         <div class="bg-white flex flex-wrap flex-col w-[90%] translate-y-[-35px] py-6 px-5">
                             <h3 class="text-[1.5rem] sm:text-[1.7rem] md:text-[2rem] font-light mb-4">CUPRA Formentor</h3>
                             <p class="text-md font-light mb-5">Wyrazista i pełna adrenaliny. Nowa CUPRA Formentor łączy odważny design crossovera coupé z mocą 310 KM.</p>
@@ -650,7 +651,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col sm:basis-2/4 lg:basis-[40%] xl:basis-[30%] 2xl:basis-1/4 sm:mx-5 h-[600px]">
-                        <div class="bg-gray-500"><img style="width: 100%" src="img/CUPRA_Leon_01_HQ-1.png" alt=""></div>
+                        <div class="bg-gray-500"><img style="width: 100%" src="img/CUPRA_Leon_01_HQ-1.png" alt="Cupra Leon" loading="lazy"></div>
                         <div class="bg-white flex flex-wrap flex-col w-[90%] translate-y-[-35px] py-6 px-5">
                             <h3 class="text-[1.5rem] sm:text-[1.7rem] md:text-[2rem] font-light mb-4">CUPRA Leon</h3>
                             <p class="text-md font-light mb-5">Hybrydowe połączenie silnika benzynowego i elektrycznego o mocy 245 KM z maksymalnym zasiegiem 52 km.</p>
@@ -662,7 +663,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col sm:basis-2/4 lg:basis-[40%] xl:basis-[30%] 2xl:basis-1/4 sm:mx-5 h-[600px]">
-                        <div class="bg-gray-500"><img style="width: 100%" src="img/CUPRA-Leon-Sportstourer_01_HQ 1.png" alt=""></div>
+                        <div class="bg-gray-500"><img style="width: 100%" src="img/CUPRA-Leon-Sportstourer_01_HQ 1.png" alt="Cupra Leon Sportstourer" loading="lazy"></div>
                         <div class="bg-white flex flex-wrap flex-col w-[90%] translate-y-[-35px] py-6 px-5">
                             <h3 class="text-[1.5rem] sm:text-[1.7rem] md:text-[1.7rem] font-light mb-4">CUPRA Leon Sportstourer</h3>
                             <p class="text-md font-light mb-5">Rodzinna i sportowa - dynamiczna i stylowa hybryda plug-in w wersji kombi z bagażnikiem o pojemności 470l.</p>
@@ -674,7 +675,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col sm:basis-2/4 lg:basis-[40%] xl:basis-[30%] 2xl:basis-1/4 sm:mx-5 h-[600px]">
-                        <div class="bg-gray-500"><img style="width: 100%" src="img/CUPRA-ATECA-PA-402-1.png" alt=""></div>
+                        <div class="bg-gray-500"><img style="width: 100%" src="img/CUPRA-ATECA-PA-402-1.png" alt="Cupra Ateca" loading="lazy"></div>
                         <div class="bg-white flex flex-wrap flex-col w-[90%] translate-y-[-35px] py-6 px-5">
                             <h3 class="text-[1.5rem] sm:text-[1.7rem] md:text-[1.7rem] font-light mb-4">CUPRA Ateca</h3>
                             <p class="text-md font-light mb-5">Nowe oblicze dynamicznego SUV-a. Sportowe akcenty, detale w kolorze ciemnego aluminium i wyrazista maska z przetłoczeniami, pod którą kryje się moc 300 KM.</p>
@@ -686,7 +687,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col sm:basis-2/4 lg:basis-[40%] xl:basis-[30%] 2xl:basis-1/4 sm:mx-5 h-[600px]">
-                        <div class="bg-gray-500"><img style="width: 100%" src="img/CUPRA-Born_01_HQ-1.png" alt=""></div>
+                        <div class="bg-gray-500"><img style="width: 100%" src="img/CUPRA-Born_01_HQ-1.png" alt="Nowa Cupra Born" loading="lazy"></div>
                         <div class="bg-white flex flex-wrap flex-col w-[90%] translate-y-[-35px] py-6 px-5">
                             <h3 class="text-[1.5rem] sm:text-[1.7rem] md:text-[1.7rem] font-light mb-4">Nowa CUPRA Born</h3>
                             <p class="text-md font-light mb-5">Całkowicie elektryczna i drapieżnie sportowa. Nowa CUPRA Born z zasięgiem nawet do 427 km i przyspieszeniem 7,3 s sprawi, że poczujesz jazdę na nowo.</p>
@@ -756,8 +757,8 @@
                     <a href="#" class="hover:underline">Polityka cookies</a>
                 </div>
                 <div class="flex space-x-5">
-                    <a href="#"><img src="img/instagram-logo-cupra.png" alt=""></a>
-                    <a href="#"><img src="img/vimeo-logo-cupra.png" alt=""></a>
+                    <a href="#"><img style="width: 24px; height: 24px;" src="img/instagram-logo-cupra.png" alt="Cupra Instagram" loading="lazy"></a>
+                    <a href="#"><img style="width: 24px; height: 24px;" src="img/vimeo-logo-cupra.png" alt="Cupra Vidmeo" loading="lazy"></a>
                 </div>
                 
             </div>

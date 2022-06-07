@@ -154,39 +154,44 @@ header {
      background-size: cover;
      background-position: center;
  }
-
 .options {
-     height: 0px;
-     padding: 0;
-     transform: scaleY(0);
-     transition: 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: all 0.4s ease-in-out;
  }
 
 .option--active {
-    height: 100%;
-    padding: 1;
+    max-height: 700px;
+    opacity: 1;
+    transform-origin: top;
     transform: scaleY(1);
     border: 1px solid #d1d5db;
-    border-bottom: none;
+    border-top: none;
  } 
  
+ /* .container__items {
+    height: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+ }
+
+ .container__items--active {
+    height: auto;
+    transform-origin: top;
+    transform: scaleY(1);
+ } */
+
  .item__selected {
     height: 100%;
-    width: 91%;
+    width: auto;
     font-size: 1.125rem;
     border: 1px solid #d1d5db;
  }
 
- .last-dropdown {
-     border-bottom: 1px solid #d1d5db;
- }
-
  .arrow--active {
      transform: rotate(180deg);
- }
-
- .first-item {
-     border-top: none;
  }
 
  input[type="checkbox"] {
