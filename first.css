@@ -154,34 +154,23 @@ header {
      background-size: cover;
      background-position: center;
  }
-.options {
-    max-height: 0;
-    opacity: 0;
-    transform-origin: top;
-    transform: scaleY(0);
-    transition: all 0.4s ease-in-out;
- }
 
-.option--active {
-    max-height: 700px;
-    opacity: 1;
-    transform-origin: top;
-    transform: scaleY(1);
+ .options {
+    width: auto;
     border: 1px solid #d1d5db;
     border-top: none;
- } 
+ }
  
- /* .container__items {
-    height: 0;
-    transform-origin: top;
-    transform: scaleY(0);
+ .container__items {
+    max-height: 0px;
+    overflow: hidden;
+    transition: all .4s ease-in-out;
+    
  }
 
  .container__items--active {
-    height: auto;
-    transform-origin: top;
-    transform: scaleY(1);
- } */
+    max-height: 1000px;
+ }
 
  .item__selected {
     height: 100%;

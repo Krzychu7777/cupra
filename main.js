@@ -9,8 +9,8 @@ const offerToggler = document.querySelector('.offer-toggler');
 const testDriveBtn = document.querySelectorAll('.test--drive--btn');
 const testDriveCard = document.querySelector('.test--drive--card');
 
-let dropDownOpen=1;
 const dropDownItems = document.querySelectorAll('.item');
+const dropDownList = document.querySelectorAll('.container__items');
 const dropDownArrow = document.querySelectorAll('.arrow');
 const selectedItem = document.querySelectorAll('.item__selected');
 const selectedImg = document.getElementById('image-selected');
@@ -18,7 +18,8 @@ const selectedName = document.getElementById('text-select');
 const selectedImgTop = document.getElementById('image-selected__top');
 const selectedNameTop = document.getElementById('text-select__top');
 
-const form = document.getElementById('form');
+// const form = document.getElementById('form');
+const form = document.querySelectorAll('form');
 const username = document.getElementById('name');
 const lastName = document.getElementById('lastname');
 const email = document.getElementById('email');
@@ -33,10 +34,10 @@ const phoneTop = document.getElementById('phone__top');
 const btnSubmitTop = document.getElementById('btn__top');
 
 //errors Input
-const errorEmail = document.getElementById('error-email');
-const errorName = document.getElementById('error-name');
-const errorPhone = document.getElementById('error-phone');
-const errorLastName = document.getElementById('error-lastname');
+// const errorEmail = document.getElementById('error-email');
+// const errorName = document.getElementById('error-name');
+// const errorPhone = document.getElementById('error-phone');
+// const errorLastName = document.getElementById('error-lastname');
 
 const errorEmailTop = document.getElementById('error-email__top');
 const errorNameTop = document.getElementById('error-name__top');
@@ -57,14 +58,7 @@ const successPhoneTop = document.getElementById('success-phone__top');
 //checkbox
 const agree = document.getElementById('dane-osobowe');
 const agreeError = document.getElementById('error-agree');
-const checkboxs = document.getElementsByName('contact');
-
-const contactEmail = document.getElementById('mail')
-const contactPhone = document.getElementById('contact-phone')
-const contactMessage = document.getElementById('message')
 const contactError = document.getElementById('error-contact');
-let checked = false;
-
 
 const agreeTop = document.getElementById('dane-osobowe__top');
 const agreeErrorTop = document.getElementById('error-agree__top');
@@ -75,7 +69,7 @@ const contactPhoneTop = document.getElementById('contact-phone__top')
 const contactMessageTop = document.getElementById('message__top')
 const contactErrorTop = document.getElementById('error-contact__top');
 
-const checkBoxes = document.querySelectorAll('input[name="contact[]"]');
+let checkBoxes = document.querySelectorAll('input[name="contact[]"]');
 
 
 
@@ -109,8 +103,8 @@ function dropDown(dropDownContainer) {
         arrow.classList.toggle("arrow--active");
     });
 
-    dropDownItems.forEach((item) => {
-        item.classList.toggle('option--active');
+    dropDownList.forEach((item) => {
+    item.classList.toggle('container__items--active');
     });
 }
 
@@ -157,12 +151,6 @@ function setError(errorClass, successClass, errorInformation) {
     // btnSubmit.style.opacity = "0.3";
 };
 
-checkBoxes.forEach((item, index) => {
-    item.addEventListener('change', () => {
-        contactError.innerHTML = "";
-    });
-});
-
 function validateInputs(input, success, error, infoErorr) {
     if (input.validity.valid) {
         setSuccess(success, error);
@@ -177,94 +165,155 @@ function validateInputs(input, success, error, infoErorr) {
     }
 };
 
-function agreeValidate() {
-    if(agree.checked) {
-        agreeError.innerHTML = "";
-        agree.style.borderColor = "";
+function agreeValidate(agreeCheck, agreeErrors) {
+    if(agreeCheck.checked) {
+        agreeErrors.innerHTML = "";
+        agreeCheck.style.borderColor = "";
      } 
 };
 
 function requiredInputs(inputs, errors, event) {
-    if(!inputs.validity.valid) {
+    inputs.forEach((input) => { 
+    if(!input.validity.valid) {
         errors.innerHTML = "To pole jest wymagane!";
         event.preventDefault();
     }
+    });
 };
 
 function agreeCheck(agreeCheck, agreeCheckError, event) {
-    if(agreeCheck.checked == false) {
+    agreeCheck.forEach((agree) => {
+    if(agree.checked == false) {
        agreeCheckError.innerHTML = "Zaznacz pola wymagane!";
-       agreeCheck.style.borderColor = "red";
+       agree.style.borderColor = "red";
        event.preventDefault();
     } 
+})
 };
 
-agree.addEventListener('change', () => {
-    agreeValidate();
-})
-email.addEventListener('input', () => {
-    validateInputs(email, successEmail, errorEmail, "To pole jest wymagane!");
-});
-username.addEventListener('input', () => {
-    validateInputs(username, successName, errorName, "To pole jest wymagane!");
-});
-phone.addEventListener('input', () => {
-    validateInputs(phone, successPhone, errorPhone, "To pole jest wymagane!");
-    phone.value=phone.value.replace(' ', '');
-    phone.value=phone.value.replace(/[^\d, +,' ']/, '');   
-});
-lastName.addEventListener('input', () => {
-    validateInputs(lastName, successLastName, errorLastName, "")
+//agree remove error 
+let agreeCheckRemove = document.querySelectorAll('input[name="private-politics"]');
+let agreeChecekError = document.querySelectorAll('.agree-error');
+let emails = document.querySelectorAll('input[name="email"]');
+let userName = document.querySelectorAll('input[name="name"]');
+let phoneNumber = document.querySelectorAll('input[name="phone"]');
+let lastNameInput = document.querySelectorAll('input[name="last-name"]');
+
+agreeCheckRemove.forEach((agree, index) => { 
+agree.addEventListener('change', (e) => {
+    agreeCheckRemove = e.target;
+    agreeValidate(agreeCheckRemove, agreeChecekError[index]);
+    });
 });
 
-form.addEventListener('submit', (e) => {
-    const checkedBoxes = [...checkBoxes].filter((item) => {
+//remove contacts error
+checkBoxes.forEach((item) => {
+    item.addEventListener('change', (e) => {
+        checkBoxes = e.target.parentNode.parentNode;
+        const contactCheckError = checkBoxes.querySelectorAll('.contact-error');
+        contactCheckError[0].innerHTML = "";
+        const checkBoxItem = checkBoxes.querySelectorAll('input[name="contact[]"]');
+        for(let i=0; i < checkBoxItem.length; i++) {
+            checkBoxItem[i].style.borderColor = "";
+        }
+        
+    });
+});
+
+emails.forEach((email) => {
+    email.addEventListener('input', (e) => {
+        emails = e.target;
+        const emailError = emails.parentNode.querySelectorAll('.email-error');
+        const emailSucces = emails.parentNode.querySelectorAll('.email-success');
+    validateInputs(emails, emailSucces[0], emailError[0], "To pole jest wymagane!");
+    });
+});
+
+
+userName.forEach((username) => { 
+username.addEventListener('input', (e) => {
+    userName = e.target;
+    const userError = userName.parentNode.querySelectorAll('.name-error');
+    const userSucces = userName.parentNode.querySelectorAll('.name-success');
+    validateInputs(username, userSucces[0], userError[0], "To pole jest wymagane!");
+    });
+});
+
+phoneNumber.forEach((phone) => { 
+phone.addEventListener('input', (e) => {
+    phoneNumber = e.target;
+    const phoneError = phoneNumber.parentNode.querySelectorAll('.phone-error');
+    const phoneSucces = phoneNumber.parentNode.querySelectorAll('.phone-success');
+    validateInputs(phone, phoneSucces[0], phoneError[0], "To pole jest wymagane!");
+    phone.value=phone.value.replace(' ', '');
+    phone.value=phone.value.replace(/[^\d, +,' ']/, '');   
+    });
+});
+
+lastNameInput.forEach((lastName) => { 
+lastName.addEventListener('input', (e) => {
+    lastNameInput = e.target;
+    const lastNameError = lastNameInput.parentNode.querySelectorAll('.last-name-error');
+    const lastNameSucces = lastNameInput.parentNode.querySelectorAll('.last-name-success');
+    validateInputs(lastName, lastNameSucces[0], lastNameError[0], "");
+    });
+});
+
+function contactCheckErrors(checkBoxContact, checkContactError, e) {
+    const checkedBoxes = [...checkBoxContact].filter((item) => {
         return item.checked;
     });
     if(checkedBoxes == "") {
-        contactError.innerHTML = "Zaznacz formę kontaktu!";
-       e. preventDefault();
+        checkContactError.innerHTML = "Zaznacz formę kontaktu!";
+        // checkBoxContact.style.borderColor = "red";
+       e.preventDefault();
+       for(let i=0; i < checkBoxContact.length; i++) {
+           checkBoxContact[i].style.borderColor = "red";
+       }
+
     }
-    agreeCheck(agree, agreeError, e);
-    requiredInputs(email, errorEmail, e);
-    requiredInputs(username, errorName, e);
-    requiredInputs(phone, errorPhone, e);
+}
+
+function testDriveForm1(e) {
+    const targets = e.target;
+
+    let TestDriveForm = {
+        name: targets.querySelectorAll('input[name="name"]'),
+        lastName: targets.querySelectorAll('input[name="last-name"]'),
+        email: targets.querySelectorAll('input[name="email"]'),
+        phone: targets.querySelectorAll('input[name="phone"]'),
+        checkAgree: targets.querySelectorAll('input[name="private-politics"]'),
+        checkContacts: targets.querySelectorAll('input[name="contact[]"]')
+    };
+
+    const testError = document.querySelector('.name-error');
+    
+    let TestDriveErrors = {
+        nameError: targets.querySelectorAll('.name-error'),
+        lastNameError: targets.querySelectorAll('.last-name-error'),
+        emailError: targets.querySelectorAll('.email-error'),
+        phoneError: targets.querySelectorAll('.phone-error'),
+        agreeError: targets.querySelectorAll('.agree-error'),
+        contactError: targets.querySelectorAll('.contact-error')
+    };
+    
+    requiredInputs(TestDriveForm.name, TestDriveErrors.nameError[0], e);
+    requiredInputs(TestDriveForm.email, TestDriveErrors.emailError[0], e);
+    requiredInputs(TestDriveForm.phone, TestDriveErrors.phoneError[0], e);
+
+    agreeCheck(TestDriveForm.checkAgree, TestDriveErrors.agreeError[0], e);
+
+    contactCheckErrors(TestDriveForm.checkContacts, TestDriveErrors.contactError[0], e);
+
+
     location.href = "#jazda-probna";
+};
 
-    // checkBoxes.forEach((item) => {
-    //     if (checkedBoxes == "") {
-    //     item.style.borderColor = "red";
-    //     }
-    // });
-});
 
-//validation form Top
-
-agreeTop.addEventListener('change', () => {
-    agreeValidate();
-})
-emailTop.addEventListener('input', () => {
-    validateInputs(emailTop, successEmailTop, errorEmailTop, "To pole jest wymagane!");
-});
-usernameTop.addEventListener('input', () => {
-    validateInputs(usernameTop, successNameTop, errorNameTop, "To pole jest wymagane!");
-});
-phoneTop.addEventListener('input', () => {
-    validateInputs(phoneTop, successPhoneTop, errorPhoneTop, "To pole jest wymagane!");
-    phoneTop.value=phoneTop.value.replace(' ', '');
-    phoneTop.value=phoneTop.value.replace(/[^\d, +,' ']/, '');   
-});
-lastNameTop.addEventListener('input', () => {
-    validateInputs(lastNameTop, successLastNameTop, errorLastNameTop, "")
+form.forEach((forms) => { 
+forms.addEventListener('submit', (e) => testDriveForm1(e))
 });
 
-formTop.addEventListener('submit', (e) => {
-    contactCheck(contactEmailTop, contactPhoneTop, contactMessageTop, contactErrorTop, e);
-    agreeCheck(agreeTop, agreeErrorTop, e);
-    requiredInputs(emailTop, errorEmailTop, e);
-    requiredInputs(usernameTop, errorNameTop, e);
-    requiredInputs(phoneTop, errorPhoneTop, e);
-});
 
 
 //open test drive
