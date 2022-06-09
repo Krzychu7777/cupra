@@ -62,6 +62,8 @@ function dropDown(dropDownList, dropDownArrow) {
     });
 }
 
+let element;
+let change = false;
 function changeDropDownValue({ currentTarget }, target) {
     const dropDownContainer = currentTarget.parentNode.parentNode;
     const newImg = currentTarget.querySelector('img').src;
@@ -69,14 +71,20 @@ function changeDropDownValue({ currentTarget }, target) {
     const selectedImage = currentTarget.parentNode.parentNode.querySelector('.image-select');
     const selectedText = currentTarget.parentNode.parentNode.querySelector('.text-select');
 
-    const element = currentTarget;
-
-    selectedImage.src = `${newImg}`;
-    selectedText.textContent = newName;
-
-    if(newImg === selectedImage.src) {
+    if (change) {
+        element.style.display = "flex";
+      }
+    
+      element = currentTarget;
+      element.style.display = "none";
+      change = true;
+    
+      selectedImage.src = `${newImg}`;
+      selectedText.textContent = newName;
+    
+      if (newImg === selectedImage.src) {
         element.classList.add("hidden");
-    }
+      }
 }
 
    selectedItem.forEach(select => {
@@ -88,25 +96,23 @@ function changeDropDownValue({ currentTarget }, target) {
     });
 });
 
+let hiddenDropDown;
 dropDownItems.forEach((item) => {
         item.addEventListener('click', (event) => {
             changeDropDownValue(event);
 
             const items = event.currentTarget.parentNode.parentNode;
-            const options = [...items.querySelectorAll('.options')];
-            const optionIndex = options.indexOf(item);
-
+            const options = [...items.querySelectorAll(".options")];
+        
             const test = options.filter((element) => {
-                return element.classList.contains("hidden");
+              return element.classList.contains("hidden");
             });
-
-            if(test.length > 1) {
-            for(let i=0; i < test.length; i++) {
+        
+            if (test.length > 1) {
+              for (let i = 0; i < test.length; i++) {
                 test[i].classList.remove("hidden");
+              }
             }
-            
-        }
-        console.log(test);
 
         });
 });
