@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="tailwind.css">
     <link rel="shortcut icon" type="image/png" href="img/cupra_favicon.png">
     <title>Cupra</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
      @font-face {
         font-family: Cupra;
@@ -72,6 +73,8 @@
                 <button class="w-[196px] h-[50px] border-box text-white bg-[#190F14] hover:opacity-70 duration-150 test--drive--btn">Umów Jazdę próbną</button>
             </div>
         </div>
+    </header>
+    <main class="">
         <section class="fixed top-0 h-full w-full bg-[#F5F5F5] z-30 overflow-scroll overflow-x-hidden test--drive--card">
             <div class="absolute flex flex-row top-[15%] sm:top-[10%] left-[50%] -translate-x-2/4 md:left-[15%] space-x-3 cursor-pointer offer-toggler hover:opacity-40 duration-300 z-30">
                 <img src="img/form2_arrow.svg" alt="przycisk powrót" loading="lazy">
@@ -84,8 +87,8 @@
                 </div>
                 <div class="mt-[15%] dropdown">
                     <div class="item__selected flex flex-col sm:flex-row items-center justify-center relative border-solid border-[1px] border-gray-300 sm:pl-7 cursor-pointer sm:ml-[50px] mx-auto z-20 select-none pb-5 sm:pb-0">
-                        <img id="image-selected__top" style="width: 306px; height: 139px;" class="image-selected sm:ml-[-100px] z-10" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentor" loading="lazy">
-                        <p id="text-select__top" class="w-[200px] text-center sm:text-left sm:ml-8 pb-3 sm:pb-0">Cupra Formentor</p>
+                        <img id="image-selected__top" style="width: 306px; height: 139px;" class="image-select sm:ml-[-100px] z-10" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentor" loading="lazy">
+                        <p id="text-select__top" class="text-select w-[200px] text-center sm:text-left sm:ml-8 pb-3 sm:pb-0">Cupra Formentor</p>
                         <img style="width: 3%;" class="arrow duration-300" src="img/arrow-down_form.svg" alt="">
                     </div>
                     <ul class="container__items">
@@ -160,8 +163,6 @@
                 </form>
             </div>
         </section>
-    </header>
-    <main class="">
         <section id="home" class="top-section w-full relative">
                 <div class="flex flex-col justify-center items-center sm:justify-start sm:items-start text-white mx-[3%] xl:ml-[13%] absolute bottom-[15%] space-y-3 max-w-3xl">
                     <h3 class="text-center sm:text-left text-lg sm:text-xl xl:text-2xl opacity-50 font-normal">CUPRA Formentor</h3>
@@ -547,19 +548,19 @@
             </div>
         </section>
         <section id="jazda-probna" class="min-h-[100vh] bg-[#F5F5F5] py-20 p-4">
-            <div class="container mx-auto md:w-[60%] lg:w-[50%] xl:w-[40%] 3xl:w-[30%]">
+            <div id="test" class="container mx-auto md:w-[60%] lg:w-[50%] xl:w-[40%] 3xl:w-[30%]">
                 <div class="text-center">
                     <h3 class="font-light">Jazda Próbna</h3>
                     <h1 class="text-2xl sm:text-4xl w-[80%] text-center mx-auto mt-5 font-light">Umów się na bezpłatną jazdę próbną</h1>
                 </div>
-                <div class="mt-[15%] dropdown">
+                <div id="test" class="mt-[15%] dropdown">
                         <div class="item__selected flex flex-col sm:flex-row bg-[#F5F5F5] items-center justify-center relative border-solid border-[1px] border-gray-300 sm:px-7 cursor-pointer sm:ml-[50px] mx-auto select-none pb-5 sm:pb-0">
-                            <img style="width: 306px; height: 139px;" id="image-selected" class="sm:ml-[-100px] z-10" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentr" loading="lazy">
-                            <p id="text-select" class="w-[200px] text-center sm:text-left sm:ml-3 pb-3 sm:pb-0">Cupra Formentor</p>
+                            <img id="image-selected" class="image-select sm:ml-[-100px] z-10  image__responsive" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentr" loading="lazy" width="306px" height="139px">
+                            <p id="text-select" class="text-select w-[200px] text-center sm:text-left sm:ml-3 pb-3 sm:pb-0">Cupra Formentor</p>
                             <img style="width: 3%;" class="arrow duration-500" src="img/arrow-down_form.svg" alt="Strzałka wyboru">
                     </div>
                     <ul class="container__items">
-                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto">
+                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto hidden">
                             <img class="sm:ml-[-90px] z-10 image__responsive" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentor" loading="lazy" width="306px" height="139px">
                             <p class="w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Cupra Formentor</p>
                         </li>

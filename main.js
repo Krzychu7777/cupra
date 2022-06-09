@@ -10,66 +10,20 @@ const testDriveBtn = document.querySelectorAll('.test--drive--btn');
 const testDriveCard = document.querySelector('.test--drive--card');
 
 const dropDownItems = document.querySelectorAll('.item');
-const dropDownList = document.querySelectorAll('.container__items');
-const dropDownArrow = document.querySelectorAll('.arrow');
 const selectedItem = document.querySelectorAll('.item__selected');
 const selectedImg = document.getElementById('image-selected');
 const selectedName = document.getElementById('text-select');
 const selectedImgTop = document.getElementById('image-selected__top');
 const selectedNameTop = document.getElementById('text-select__top');
 
-// const form = document.getElementById('form');
-const form = document.querySelectorAll('form');
-const username = document.getElementById('name');
-const lastName = document.getElementById('lastname');
-const email = document.getElementById('email');
-const phone = document.getElementById('phone');
-const btnSubmit = document.getElementById('btn');
-
-const formTop = document.getElementById('form__top');
-const usernameTop = document.getElementById('name__top');
-const lastNameTop = document.getElementById('lastname__top');
-const emailTop = document.getElementById('email__top');
-const phoneTop = document.getElementById('phone__top');
-const btnSubmitTop = document.getElementById('btn__top');
-
-//errors Input
-// const errorEmail = document.getElementById('error-email');
-// const errorName = document.getElementById('error-name');
-// const errorPhone = document.getElementById('error-phone');
-// const errorLastName = document.getElementById('error-lastname');
-
-const errorEmailTop = document.getElementById('error-email__top');
-const errorNameTop = document.getElementById('error-name__top');
-const errorPhoneTop = document.getElementById('error-phone__top');
-const errorLastNameTop = document.getElementById('error-lastname__top');
-
-//success Input
-const successName = document.getElementById('success-name');
-const successLastName = document.getElementById('success-lastname');
-const successEmail = document.getElementById('success-email');
-const successPhone = document.getElementById('success-phone');
-
-const successNameTop = document.getElementById('success-name__top');
-const successLastNameTop = document.getElementById('success-lastname__top');
-const successEmailTop = document.getElementById('success-email__top');
-const successPhoneTop = document.getElementById('success-phone__top');
-
-//checkbox
-const agree = document.getElementById('dane-osobowe');
-const agreeError = document.getElementById('error-agree');
-const contactError = document.getElementById('error-contact');
-
-const agreeTop = document.getElementById('dane-osobowe__top');
-const agreeErrorTop = document.getElementById('error-agree__top');
-const checkboxsTop = document.getElementsByName('contact__top');
-
-const contactEmailTop = document.getElementById('mail__top')
-const contactPhoneTop = document.getElementById('contact-phone__top')
-const contactMessageTop = document.getElementById('message__top')
-const contactErrorTop = document.getElementById('error-contact__top');
-
+const forms = document.querySelectorAll('form');
 let checkBoxes = document.querySelectorAll('input[name="contact[]"]');
+let agreeCheckRemove = document.querySelectorAll('input[name="private-politics"]');
+let agreeChecekError = document.querySelectorAll('.agree-error');
+let emails = document.querySelectorAll('input[name="email"]');
+let userName = document.querySelectorAll('input[name="name"]');
+let phoneNumber = document.querySelectorAll('input[name="phone"]');
+let lastNameInput = document.querySelectorAll('input[name="last-name"]');
 
 
 
@@ -88,7 +42,7 @@ main.addEventListener('click', menuClose);
 
 mobileMenu.addEventListener('click', (event) => {
     if (event.target.tagName === "DIV") {
-        preventDefault();
+        event.preventDefault();
     } else {
         menuClose()
     }
@@ -97,7 +51,7 @@ mobileMenu.addEventListener('click', (event) => {
 
 
 //drop down
-function dropDown(dropDownContainer) {
+function dropDown(dropDownList, dropDownArrow) {
 
     dropDownArrow.forEach(arrow => {
         arrow.classList.toggle("arrow--active");
@@ -108,32 +62,56 @@ function dropDown(dropDownContainer) {
     });
 }
 
-function changeDropDownValue({ currentTarget }) {
+function changeDropDownValue({ currentTarget }, target) {
     const dropDownContainer = currentTarget.parentNode.parentNode;
     const newImg = currentTarget.querySelector('img').src;
     const newName = currentTarget.querySelector("p").textContent;
+    const selectedImage = currentTarget.parentNode.parentNode.querySelector('.image-select');
+    const selectedText = currentTarget.parentNode.parentNode.querySelector('.text-select');
 
-    selectedImgTop.src = `${newImg}`;
-    selectedNameTop.textContent = newName;
+    const element = currentTarget;
 
-    selectedImg.src = `${newImg}`;
-    selectedName.textContent = newName;
+    selectedImage.src = `${newImg}`;
+    selectedText.textContent = newName;
 
-    dropDown(dropDownContainer);
+    if(newImg === selectedImage.src) {
+        element.classList.add("hidden");
+    }
 }
 
    selectedItem.forEach(select => {
     select.addEventListener('click', (e) => {
-        const dropDownContainer = e.currentTarget.parentNode.parentNode;
-        dropDown(dropDownContainer);
+        const dropDownContainer = e.target.parentNode.parentNode;
+        const dropDownList = dropDownContainer.querySelectorAll('.container__items');
+        const dropDownArrow = dropDownContainer.querySelectorAll('.arrow');
+        dropDown(dropDownList, dropDownArrow);
     });
 });
 
-dropDownItems.forEach((item, index) => {
+dropDownItems.forEach((item) => {
         item.addEventListener('click', (event) => {
             changeDropDownValue(event);
+
+            const items = event.currentTarget.parentNode.parentNode;
+            const options = [...items.querySelectorAll('.options')];
+            const optionIndex = options.indexOf(item);
+
+            const test = options.filter((element) => {
+                return element.classList.contains("hidden");
+            });
+
+            if(test.length > 1) {
+            for(let i=0; i < test.length; i++) {
+                test[i].classList.remove("hidden");
+            }
+            
+        }
+        console.log(test);
+
         });
 });
+
+
 
 
 
@@ -192,12 +170,6 @@ function agreeCheck(agreeCheck, agreeCheckError, event) {
 };
 
 //agree remove error 
-let agreeCheckRemove = document.querySelectorAll('input[name="private-politics"]');
-let agreeChecekError = document.querySelectorAll('.agree-error');
-let emails = document.querySelectorAll('input[name="email"]');
-let userName = document.querySelectorAll('input[name="name"]');
-let phoneNumber = document.querySelectorAll('input[name="phone"]');
-let lastNameInput = document.querySelectorAll('input[name="last-name"]');
 
 agreeCheckRemove.forEach((agree, index) => { 
 agree.addEventListener('change', (e) => {
@@ -273,11 +245,12 @@ function contactCheckErrors(checkBoxContact, checkContactError, e) {
 
     }
 }
+ let TestDriveForm;
 
 function testDriveForm1(e) {
     const targets = e.target;
 
-    let TestDriveForm = {
+    TestDriveForm = {
         name: targets.querySelectorAll('input[name="name"]'),
         lastName: targets.querySelectorAll('input[name="last-name"]'),
         email: targets.querySelectorAll('input[name="email"]'),
@@ -307,11 +280,26 @@ function testDriveForm1(e) {
 
 
     location.href = "#jazda-probna";
+
 };
 
+// const formSend = document.getElementById("form_send");
 
-form.forEach((forms) => { 
-forms.addEventListener('submit', (e) => testDriveForm1(e))
+forms.forEach((forms) => { 
+    forms.addEventListener('submit', (e) => {
+        testDriveForm1(e);
+
+    // const load = new FormData(formSend);
+
+    //     fetch("http://example.com", {
+    //         method: POST,
+    //         body: load,
+    //     })
+    //     .then(response => response.json())
+    //     .then((data) => {
+    //         console.log(data);
+    //     })
+    })
 });
 
 
@@ -409,4 +397,3 @@ var splide = new Splide( '#slider3', {
 });
 
 splide.mount();
-
