@@ -264,7 +264,7 @@ function contactCheckErrors(checkBoxContact, checkContactError, e) {
         return item.checked;
     });
     if(checkedBoxes == "") {
-        checkContactError.innerHTML = "Zaznacz formę kontaktu!";
+        checkContactError.innerHTML = "Wybierz formę kontaktu!";
         // checkBoxContact.style.borderColor = "red";
        e.preventDefault();
        for(let i=0; i < checkBoxContact.length; i++) {
