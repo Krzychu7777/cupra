@@ -172,10 +172,10 @@ function agreeValidate(agreeCheck, agreeErrors) {
      } 
 };
 
-function requiredInputs(inputs, errors, event) {
+function requiredInputs(inputs, errors, textError, event) {
     inputs.forEach((input) => { 
     if(!input.validity.valid) {
-        errors.innerHTML = "To pole jest wymagane!";
+        errors.innerHTML =  textError;
         event.preventDefault();
     }
     });
@@ -225,7 +225,7 @@ emails.forEach((email) => {
         emails = e.target;
         const emailError = emails.parentNode.querySelectorAll('.email-error');
         const emailSucces = emails.parentNode.querySelectorAll('.email-success');
-    validateInputs(emails, emailSucces[0], emailError[0], "To pole jest wymagane!");
+    validateInputs(emails, emailSucces[0], emailError[0], "Podaj e-mail!");
     });
 });
 
@@ -235,7 +235,7 @@ username.addEventListener('input', (e) => {
     userName = e.target;
     const userError = userName.parentNode.querySelectorAll('.name-error');
     const userSucces = userName.parentNode.querySelectorAll('.name-success');
-    validateInputs(username, userSucces[0], userError[0], "To pole jest wymagane!");
+    validateInputs(username, userSucces[0], userError[0], "Podaj swoje imie!");
     });
 });
 
@@ -244,7 +244,7 @@ phone.addEventListener('input', (e) => {
     phoneNumber = e.target;
     const phoneError = phoneNumber.parentNode.querySelectorAll('.phone-error');
     const phoneSucces = phoneNumber.parentNode.querySelectorAll('.phone-success');
-    validateInputs(phone, phoneSucces[0], phoneError[0], "To pole jest wymagane!");
+    validateInputs(phone, phoneSucces[0], phoneError[0], "Podaj numer telefonu!");
     phone.value=phone.value.replace(' ', '');
     phone.value=phone.value.replace(/[^\d, +,' ']/, '');   
     });
@@ -297,9 +297,9 @@ function testDriveForm1(e) {
         contactError: targets.querySelectorAll('.contact-error')
     };
     
-    requiredInputs(TestDriveForm.name, TestDriveErrors.nameError[0], e);
-    requiredInputs(TestDriveForm.email, TestDriveErrors.emailError[0], e);
-    requiredInputs(TestDriveForm.phone, TestDriveErrors.phoneError[0], e);
+    requiredInputs(TestDriveForm.name, TestDriveErrors.nameError[0], "Podaj swoje imie!", e);
+    requiredInputs(TestDriveForm.email, TestDriveErrors.emailError[0], "Podaj e-mail!", e);
+    requiredInputs(TestDriveForm.phone, TestDriveErrors.phoneError[0], "Podaj numer telefonu!", e);
 
     agreeCheck(TestDriveForm.checkAgree, TestDriveErrors.agreeError[0], e);
 

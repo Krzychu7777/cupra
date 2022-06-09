@@ -226,3 +226,7 @@ header {
     left: 0;
 }
 
+.image__responsive {
+    width: 100%;
+    height: auto;
+}
