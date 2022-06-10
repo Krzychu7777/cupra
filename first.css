@@ -164,7 +164,7 @@ header {
  .container__items {
     max-height: 0px;
     overflow: hidden;
-    transition: all .4s ease-in-out;
+    transition: all .5s;
     
  }
 
