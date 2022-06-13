@@ -78,7 +78,7 @@
         <section id="pop-up" class="fixed top-0 left-0 w-full h-full z-50 backdrop-blur-[2px] hidden">
                 <div class="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-60">
                 </div>
-                <div class="relative top-1/2 left-1/2 w-[95%] sm:w-[75%] md:w-[45%] h-[55%] bg-[#e1e4e8] translate-x-[-50%] translate-y-[-50%] rounded-xl">
+                <div class="relative top-1/2 left-1/2 w-[95%] sm:w-[75%] md:w-[60%] lg:w-[40%] h-[50%] bg-[#e1e4e8] translate-x-[-50%] translate-y-[-50%] rounded-xl">
                     <div class="relative top-[50%] translate-y-[-50%] flex flex-col justify-center items-center">
                         <img class="w-[30%] md:w-[20%]" src="img/cupra_logo_popup.svg" alt="">
                         <h1 class="text-center mt-14 text-xl sm:text-2xl md:text-3xl font-light">Dziękujemy za wysłanie zgłoszenia!</h1>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
         </section>
-        <section class="fixed top-0 h-full w-full bg-[#F5F5F5] z-30 overflow-scroll overflow-x-hidden test--drive--card">
+        <section id="slide-form" class="fixed top-0 h-full w-full bg-[#F5F5F5] z-30 overflow-scroll overflow-x-hidden test--drive--card">
             <div class="absolute flex flex-row top-[15%] sm:top-[10%] left-[50%] -translate-x-2/4 md:left-[15%] space-x-3 cursor-pointer offer-toggler hover:opacity-40 duration-300 z-30">
                 <img src="img/form2_arrow.svg" alt="przycisk powrót" loading="lazy">
                 <p class="font-semibold">Powrót</p>
@@ -135,33 +135,33 @@
                 <form novalidate id="form__top" class="flex flex-col text-black mt-[6%]" action="" method="">
                     <div class="relative">
                         <input class="w-full border-b-[1px] border-solid border-[#D5D5D5] bg-[transparent] py-2 mb-7 placeholder-black sm:text-lg focus:outline-none" type="text" name="name" id="name__top" placeholder="Imię*" required minlength="3">
-                        <p id="error-name__top" class="absolute right-0 bottom-0 text-[#FF0000] name-error"></p>
-                        <p id="success-name__top" class="absolute right-0 top-[15px] text-[#9fd649] name-success"></p>
+                        <p id="error-name__top" class="absolute right-0 bottom-0 text-[#FF0000] name-error hidden">Musisz podać Imię</p>
+                        <p id="success-name__top" class="absolute right-0 top-[15px] text-[#9fd649] name-success succes-active"></p>
                     </div>
                     <div class="relative">
                         <input class="w-full border-b-[1px] border-solid border-[#D5D5D5] bg-[transparent] py-2 mb-7 placeholder-black sm:text-lg focus:outline-none" type="text" name="last-name" id="lastname__top" placeholder="Nazwisko (opcjonalnie)" minlength="3">
-                        <p id="error-lastname__top" class="absolute right-0 bottom-0 text-[#FF0000] last-name-error"></p>
-                        <p id="success-lastname__top" class="absolute right-0 top-[15px] text-[#9fd649] last-name-success"></p>
+                        <p id="error-lastname__top" class="absolute right-0 bottom-0 text-[#FF0000] last-name-error hidden">Nieprawidłowa liczba znaków!</p>
+                        <p id="success-lastname__top" class="absolute right-0 top-[15px] text-[#9fd649] last-name-success succes-active"></p>
                     </div>
                     <div class="relative">
                         <input class="w-full border-b-[1px] border-solid border-[#D5D5D5] bg-[transparent] py-2 mb-7 placeholder-black sm:text-lg focus:outline-none" type="email" name="email" id="email__top" placeholder="adres e-mail*" required>
-                        <p id="error-email__top" class="absolute right-0 bottom-0 text-[#FF0000] email-error"></p>
-                        <p id="success-email__top" class="absolute right-0 top-[15px] text-[#9fd649] email-success"></p>
+                        <p id="error-email__top" class="absolute right-0 bottom-0 text-[#FF0000] email-error hidden">Musisz podać e-mail</p>
+                        <p id="success-email__top" class="absolute right-0 top-[15px] text-[#9fd649] email-success succes-active"></p>
                     </div>
                     <div class="relative">
                         <input class="w-full border-b-[1px] border-solid border-[#D5D5D5] bg-[transparent] py-2 mb-7 placeholder-black sm:text-lg focus:outline-none" type="tel" name="phone" id="phone__top" placeholder="Nr.telefonu*" required pattern="[0-9]{3}[0-9]{3}[0-9]{3}">
-                        <p id="error-phone__top" class="absolute right-0 bottom-0 text-[#FF0000] phone-error"></p>
-                        <p id="success-phone__top" class="absolute right-0 top-[15px] text-[#9fd649] phone-success"></p>
+                        <p id="error-phone__top" class="absolute right-0 bottom-0 text-[#FF0000] phone-error hidden">Musisz podać numer telefonu</p>
+                        <p id="success-phone__top" class="absolute right-0 top-[15px] text-[#9fd649] phone-success succes-active"></p>
                     </div>
                         <p class="font-light">*pole wymagane</p>
                         <p class="my-7 text-sm flex flex-wrap">Wysłanie uzupełnionego formularza oznacza Twoją zgodę na kontakt w celu przedstawienia informacji handlowej w wybrany przez Ciebie sposób w związku <a href="#" class="underline">Czytaj więcej</a></p>
                         <p class="mb-7 text-sm flex flex-wrap">Prosimy Cię też o wyrażenie poniższych zgód w celu możliwości przedstawiania Ci atrakcyjnych ofert / promocji produktów, akcesoriów i usług marki CUPRA w przyszłości.</p>
-                        <p id="error-agree__top" class="mb-7 text-sm flex flex-wrap text-[#FF0000] agree-error"></p>
+                        <p id="error-agree__top" class="mb-7 text-sm flex flex-wrap text-[#FF0000] agree-error hidden">Zaznacz pola wymagane</p>
                         <div class="flex flex-row justify-start space-x-2 text-sm items-start min-h-[10px]">
                             <input type="checkbox" id="dane-osobowe__top" name="private-politics">
                             <label for="dane-osobowe">Zgadzam się na przetwarzanie moich danych osobowych przez Plichta spółka z ograniczoną odpowiedzialnością Spółka Komandytowa w celu przedstawienia mi informacji marketingowych i handlowych dotyczących produktów i usług marki CUPRA oraz innych powiązanych z marką CUPRA akcesoriów, produktów i usług motoryzacyjnych za pomocą:</label>
                         </div>
-                        <p id="error-contact__top" class="mt-5 mb-[-10px] text-sm flex flex-wrap text-[#FF0000] contact-error"></p>
+                        <p id="error-contact__top" class="mt-5 mb-[-10px] text-sm flex flex-wrap text-[#FF0000] contact-error hidden">Wybierz formę kontaktu</p>
                         <div class="flex flex-row justify-start space-x-2 text-sm items-start min-h-[10px] my-8">
                             <input type="checkbox" id="mail__top" name="contact[]" value="mail">
                             <label for="mail">E-Mail</label>
@@ -177,8 +177,13 @@
                         <p class="mb-7 text-sm flex flex-wrap">Masz prawo do wglądu, modyfikacji, ograniczenia przetwarzania i usunięcia swoich danych oraz do wycofania w każdym momencie swojej zgody.</p>
                         <p class="mb-7 text-sm flex flex-wrap">Twoje dane będą przetwarzane tylko w stopniu umożliwiającym realizację wymienionego celu.</p>
                         <p class="mb-7 text-sm flex flex-wrap">Administratorem Twoich danych jest Plichta spółka z ograniczoną odpowiedzialnością Spółka Komandytowa, z siedzibą w Wejherowie przy ulicy Gdańskiej 13c. Zapraszamy do zapoznania się z naszą polityką prywatności umieszczoną pod linkiem:<br> <a href="https://www.plichta.com.pl/polityka-prywatnosci" class="underline flex flex-wrap">https://www.plichta.com.pl/polityka-prywatnosci</a></p>
-                        <button id="btn__top" class="mt-10 px-3 py-2 sm:w-[200px] sm:h-[50px] mx-auto text-white bg-[#190F14] hover:opacity-70 duration-150" type="submit">Umów jazdę próbną</button>
+                        <button id="btn__top" class="mt-10 px-3 py-2 sm:w-[200px] sm:h-[50px] mx-auto text-white bg-[#190F14] hover:opacity-70 duration-150 btn_submit" type="submit">Umów jazdę próbną</button>
                 </form>
+                <div id="connect-error__top" class="flex flex-col relative w-[90%] h-[25%] bg-[#f78888] mx-auto items-center justify-center my-10 rounded-lg py-4 connect-error hidden">
+                    <button id="close-error__top" class="absolute top-3 left-3 close-error"><img class="w-[10%]" src="img/close.png" alt="przycisk zamknięcia błedu o połączeniu" loading="lazy" width="128px" height="128px"></button>
+                    <p class="my-2">Wystąpił błąd podczas wysyłania formularza.</p>
+                    <p class="my-2">Prosimy spróbować ponownie za chwilę.</p>
+                </div>
             </div>
         </section>
         <section id="home" class="top-section w-full relative">
@@ -571,14 +576,14 @@
                     <h3 class="font-light">Jazda Próbna</h3>
                     <h1 class="text-2xl sm:text-4xl w-[80%] text-center mx-auto mt-5 font-light">Umów się na bezpłatną jazdę próbną</h1>
                 </div>
-                <div id="test" class="mt-[15%] dropdown">
+                <div class="mt-[15%] dropdown">
                     <input type="text" name="selected_car_list" value="Cupra Formentor" class="hidden">
                         <div class="item__selected flex flex-col sm:flex-row bg-[#F5F5F5] items-center justify-center relative border-solid border-[1px] border-gray-300 sm:px-7 cursor-pointer sm:ml-[50px] mx-auto select-none pb-5 sm:pb-0">
                             <img id="image-selected" class="image-select sm:ml-[-100px] z-10  image__responsive" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentr" loading="lazy" width="306px" height="139px">
                             <p id="text-select" class="text-select w-[200px] text-center sm:text-left sm:ml-3 pb-3 sm:pb-0">Cupra Formentor</p>
                             <img style="width: 3%;" class="arrow duration-500" src="img/arrow-down_form.svg" alt="Strzałka wyboru">
                     </div>
-                    <ul id="test" class="container__items">
+                    <ul class="container__items">
                         <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto hidden">
                             <input type="text" name="car_list" value="Cupra Formentor" class="hidden">
                             <img class="sm:ml-[-90px] z-10 image__responsive" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentor" loading="lazy" width="306px" height="139px">
@@ -610,33 +615,33 @@
                     <input type="text" id="car-name" name="car_select" value="Cupra Formentor" class="hidden">
                     <div class="relative">
                         <input class="w-full border-b-[1px] border-solid border-[#D5D5D5] bg-[transparent] py-2 mb-7 placeholder-black sm:text-lg focus:outline-none" type="text" name="name" id="name" placeholder="Imię*" required minlength="3">
-                        <p id="error-name" class="absolute right-0 bottom-0 text-[#FF0000] name-error"></p>
-                        <p id="success-name" class="absolute right-0 top-[15px] text-[#9fd649] name-success"></p>
+                        <p id="error-name" class="absolute right-0 bottom-0 text-[#FF0000] name-error hidden">Musisz podać Imię</p>
+                        <p id="success-name" class="absolute right-0 top-[15px] text-[#9fd649] name-success succes-active"></p>
                     </div>
                     <div class="relative">
                         <input class="w-full border-b-[1px] border-solid border-[#D5D5D5] bg-[transparent] py-2 mb-7 placeholder-black sm:text-lg focus:outline-none" type="text" name="last-name" id="lastname" placeholder="Nazwisko (opcjonalnie)" minlength="3">
-                        <p id="error-lastname" class="absolute right-0 bottom-0 text-[#FF0000] last-name-error"></p>
-                        <p id="success-lastname" class="absolute right-0 top-[15px] text-[#9fd649] last-name-success"></p>
+                        <p id="error-lastname" class="absolute right-0 bottom-0 text-[#FF0000] last-name-error hidden">Nieprawidłowa liczba znaków!</p>
+                        <p id="success-lastname" class="absolute right-0 top-[15px] text-[#9fd649] last-name-success succes-active"></p>
                     </div>
                     <div class="relative">
                         <input class="w-full border-b-[1px] border-solid border-[#D5D5D5] bg-[transparent] py-2 mb-7 placeholder-black sm:text-lg focus:outline-none" type="email" name="email" id="email" placeholder="adres e-mail*" required>
-                        <p id="error-email" class="absolute right-0 bottom-0 text-[#FF0000] email-error"></p>
-                        <p id="success-email" class="absolute right-0 top-[15px] text-[#9fd649] email-success"></p>
+                        <p id="error-email" class="absolute right-0 bottom-0 text-[#FF0000] email-error hidden">Musisz podać e-mail</p>
+                        <p id="success-email" class="absolute right-0 top-[15px] text-[#9fd649] email-success succes-active"></p>
                     </div>
                     <div class="relative">
                         <input class="w-full border-b-[1px] border-solid border-[#D5D5D5] bg-[transparent] py-2 mb-7 placeholder-black sm:text-lg focus:outline-none" type="tel" name="phone" id="phone" placeholder="Nr.telefonu*" required pattern="[0-9]{3}[0-9]{3}[0-9]{3}">
-                        <p id="error-phone" class="absolute right-0 bottom-0 text-[#FF0000] phone-error"></p>
-                        <p id="success-phone" class="absolute right-0 top-[15px] text-[#9fd649] phone-success"></p>
+                        <p id="error-phone" class="absolute right-0 bottom-0 text-[#FF0000] phone-error hidden">Musisz podać numer telefonu</p>
+                        <p id="success-phone" class="absolute right-0 top-[15px] text-[#9fd649] phone-success succes-active"></p>
                     </div>
                         <p class="font-light">*pole wymagane</p>
                         <p class="my-7 text-sm flex flex-wrap">Wysłanie uzupełnionego formularza oznacza Twoją zgodę na kontakt w celu przedstawienia informacji handlowej w wybrany przez Ciebie sposób w związku <a href="#" class="underline">Czytaj więcej</a></p>
                         <p class="mb-7 text-sm flex flex-wrap">Prosimy Cię też o wyrażenie poniższych zgód w celu możliwości przedstawiania Ci atrakcyjnych ofert / promocji produktów, akcesoriów i usług marki CUPRA w przyszłości.</p>
-                        <p id="error-agree" class="mb-7 text-sm flex flex-wrap text-[#FF0000] agree-error">
+                        <p id="error-agree" class="mb-7 text-sm flex flex-wrap text-[#FF0000] agree-error hidden">Zaznacz pola wymagane</p>
                         <div class="flex flex-row justify-start space-x-2 text-sm items-start min-h-[10px]">
                             <input type="checkbox" id="dane-osobowe" name="private-politics">
                             <label for="dane-osobowe">Zgadzam się na przetwarzanie moich danych osobowych przez Plichta spółka z ograniczoną odpowiedzialnością Spółka Komandytowa w celu przedstawienia mi informacji marketingowych i handlowych dotyczących produktów i usług marki CUPRA oraz innych powiązanych z marką CUPRA akcesoriów, produktów i usług motoryzacyjnych za pomocą:</label>
                         </div>
-                        <p id="error-contact" class="mt-5 mb-[-10px] text-sm flex flex-wrap text-[#FF0000] contact-error"></p>
+                        <p id="error-contact" class="mt-5 mb-[-10px] text-sm flex flex-wrap text-[#FF0000] contact-error hidden">Wybierz formę kontaktu</p>
                         <div class="flex flex-row justify-start space-x-2 text-sm items-start min-h-[10px] my-8">
                             <input type="checkbox" id="mail" name="contact[]" class="" value="mail">
                             <label for="mail">E-Mail</label>
@@ -650,12 +655,16 @@
                             <input type="checkbox" id="message" name="contact[]" class="" value="message">
                             <label for="message">Wiadomości SMS/MMS</label>
                         </div>
-                    </p>
                         <p class="mb-7 text-sm flex flex-wrap">Masz prawo do wglądu, modyfikacji, ograniczenia przetwarzania i usunięcia swoich danych oraz do wycofania w każdym momencie swojej zgody.</p>
                         <p class="mb-7 text-sm flex flex-wrap">Twoje dane będą przetwarzane tylko w stopniu umożliwiającym realizację wymienionego celu.</p>
                         <p class="mb-7 text-sm flex flex-wrap">Administratorem Twoich danych jest Plichta spółka z ograniczoną odpowiedzialnością Spółka Komandytowa, z siedzibą w Wejherowie przy ulicy Gdańskiej 13c. Zapraszamy do zapoznania się z naszą polityką prywatności umieszczoną pod linkiem:<br> <a href="https://www.plichta.com.pl/polityka-prywatnosci" class="underline flex flex-wrap">https://www.plichta.com.pl/polityka-prywatnosci</a></p>
-                        <button id="btn" class="mt-10 px-3 py-2 sm:w-[200px] sm:h-[50px] mx-auto text-white bg-[#190F14] hover:opacity-70 duration-150" type="submit">Umów jazdę próbną</button>
+                        <button id="btn" class="mt-10 px-3 py-2 sm:w-[200px] sm:h-[50px] mx-auto text-white bg-[#190F14] hover:opacity-70 duration-150 btn_submit" type="submit">Umów jazdę próbną</button>
                 </form>
+                <div id="connect-error" class="flex flex-col relative w-[90%] h-[25%] bg-[#f78888] mx-auto items-center justify-center my-10 rounded-lg py-4 connect-error hidden">
+                    <button id="close-error" class="absolute top-3 left-3 close-error"><img class="w-[10%]" src="img/close.png" alt="przycisk zamknięcia błedu o połączeniu" loading="lazy" width="128px" height="128px"></button>
+                    <p class="my-2">Wystąpił błąd podczas wysyłania formularza.</p>
+                    <p class="my-2">Prosimy spróbować ponownie za chwilę.</p>
+                </div>
             </div>
         </section>
         <section id="oferta" class="min-h-[100vh] py-20 p-4">
@@ -792,5 +801,6 @@
         </div>
     </footer>
     <script src="main.js"></script>
+    <script src="form.js"></script>
 </body>
 </html>

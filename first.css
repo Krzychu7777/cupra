@@ -230,3 +230,11 @@ header {
     width: 100%;
     height: auto;
 }
+
+.btn_submit:disabled {
+    opacity: 0.3;
+}
+
+.btn_submit:disabled:hover {
+    opacity: 0.3;
+}

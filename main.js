@@ -16,6 +16,7 @@ const dropDownItems = document.querySelectorAll('.item');
 const selectedItem = document.querySelectorAll('.item__selected');
 let element;
 let change = false;
+let inputCarValueSelect = document.getElementById("car-name");
 
 
 
