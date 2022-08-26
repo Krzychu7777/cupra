@@ -156,7 +156,7 @@ function openError() {
     openConnectError.forEach((item) => {
         item.classList.remove("hidden");
     });
-    body.classList.remove("body--overflow");
+
     closeError.forEach((item) => {
         item.addEventListener('click', closeErrorPopUp);
     });
@@ -173,7 +173,9 @@ function closeErrorPopUp() {
 
 function popUpclose() {
     popUp.classList.add("hidden");
+    if(openSlideform === 0) {
     body.classList.remove("body--overflow");
+    }
 }
 
 function openPopUp() {
@@ -238,8 +240,7 @@ function testDriveSend(e) {
                 // location.href = "#connect-error";
                 openPopUp();
                     });
-        change = false;
-        inputCarValueSelect.value = "Cupra Formentor";    
+        change = false;    
         testDriveForm.name.value = "";
         testDriveForm.lastName.value = "";
         testDriveForm.email.value = "";
@@ -253,7 +254,6 @@ function testDriveSend(e) {
             item.classList.remove("success");
         })
 
-
         change = 1;
     }
 
@@ -263,8 +263,11 @@ function testDriveSend(e) {
         }
     }
 
-    console.log(btnSubmit);
-    location.href = "#jazda-probna";
+    if(openSlideform === 1) {
+        location.href = "#slide-form";
+    } else {
+        location.href = "#jazda-probna";
+    }
 }
 
 forms.forEach((item) => {

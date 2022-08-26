@@ -17,7 +17,6 @@ const selectedItem = document.querySelectorAll('.item__selected');
 let element;
 let change = false;
 let inputCarValueSelect = document.getElementById("car-name");
-let openSlideform = 0;
 
 
 
@@ -116,14 +115,12 @@ mobileMenu.addEventListener('click', (event) => {
 offerToggler.addEventListener('click', () => {
     testDriveCard.classList.remove('test--drive--active');
     body.classList.remove('body--overflow');
-    openSlideform = 0;
 });
 
 testDriveBtn.forEach(openCard => {
     openCard.addEventListener('click', () => {
         testDriveCard.classList.add('test--drive--active');
         body.classList.add('body--overflow');
-        openSlideform = 1;
     });
 });
 

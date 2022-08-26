@@ -76,9 +76,9 @@
     </header>
     <main class="">
         <section id="pop-up" class="fixed top-0 left-0 w-full h-full z-50 backdrop-blur-[2px] hidden">
-                <div class="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-60">
+                <div id="bg-popup" class="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-60">
                 </div>
-                <div class="relative top-1/2 left-1/2 w-[95%] sm:w-[75%] md:w-[60%] lg:w-[40%] h-[50%] bg-[#e1e4e8] translate-x-[-50%] translate-y-[-50%] rounded-xl">
+                <div id="main-pop-up" class="relative top-1/2 left-1/2 w-[95%] sm:w-[75%] md:w-[60%] lg:w-[40%] h-[50%] bg-[#e1e4e8] translate-x-[-50%] translate-y-[-50%] rounded-xl">
                     <div class="relative top-[50%] translate-y-[-50%] flex flex-col justify-center items-center">
                         <img class="w-[30%] md:w-[20%]" src="img/cupra_logo_popup.svg" alt="">
                         <h1 class="text-center mt-14 text-xl sm:text-2xl md:text-3xl font-light">Dziękujemy za wysłanie zgłoszenia!</h1>
@@ -87,12 +87,12 @@
                     </div>
                 </div>
         </section>
-        <section id="slide-form" class="fixed top-0 h-full w-full bg-[#F5F5F5] z-30 overflow-scroll overflow-x-hidden test--drive--card">
+        <section class="fixed top-0 h-full w-full bg-[#F5F5F5] z-30 overflow-scroll overflow-x-hidden test--drive--card">
             <div class="absolute flex flex-row top-[15%] sm:top-[10%] left-[50%] -translate-x-2/4 md:left-[15%] space-x-3 cursor-pointer offer-toggler hover:opacity-40 duration-300 z-30">
                 <img src="img/form2_arrow.svg" alt="przycisk powrót" loading="lazy">
                 <p class="font-semibold">Powrót</p>
             </div>
-            <div class="relative container mx-auto top-[85px] md:w-[60%] lg:w-[50%] xl:w-[40%] 3xl:w-[30%] py-[104px]">
+            <div id="slide-form" class="relative container mx-auto top-[85px] md:w-[60%] lg:w-[50%] xl:w-[40%] 3xl:w-[30%] py-[104px]">
                 <div class="text-center">
                     <h3 class="font-light">Jazda Próbna</h3>
                     <h1 class="text-2xl sm:text-3xl w-[80%] text-center mx-auto mt-5 font-light">Umów się na bezpłatną jazdę próbną</h1>
@@ -100,12 +100,12 @@
                 <div class="mt-[15%] dropdown">
                     <input type="text" name="selected_car_list" value="Cupra Formentor" class="hidden">
                     <div class="item__selected flex flex-col sm:flex-row items-center justify-center relative border-solid border-[1px] border-gray-300 sm:pl-7 cursor-pointer sm:ml-[50px] mx-auto z-20 select-none pb-5 sm:pb-0">
-                        <img id="image-selected__top" style="width: 306px; height: 139px;" class="image-select sm:ml-[-100px] z-10" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentor" loading="lazy">
-                        <p id="text-select__top" class="text-select w-[200px] text-center sm:text-left sm:ml-8 pb-3 sm:pb-0">Cupra Formentor</p>
+                        <img id="image-selected__top" class="image-select sm:ml-[-100px] z-10 image__responsive w-[70%]" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentor" loading="lazy" width="306px" height="139px">
+                        <p id="text-select__top" class="text-select w-[200px] text-center sm:text-left pb-3 sm:pb-0">Cupra Formentor</p>
                         <img style="width: 3%;" class="arrow duration-300" src="img/arrow-down_form.svg" alt="">
                     </div>
                     <ul class="container__items">
-                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto first-item z-10">
+                        <li class="item options flex flex-col sm:flex-row items-center justify-center relative sm:px-7 cursor-pointer sm:ml-[50px] mx-auto first-item z-10 hidden">
                             <input type="text" name="car_list" value="Cupra Formentor" class="hidden">
                             <img class="sm:ml-[-90px] z-10 image__responsive" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentor" loading="lazy" width="306px" height="139px">
                             <p class="w-[200px] text-center sm:text-left sm:ml-3 mr-2 sm:mr-8">Cupra Formentor</p>
@@ -179,8 +179,8 @@
                         <p class="mb-7 text-sm flex flex-wrap">Administratorem Twoich danych jest Plichta spółka z ograniczoną odpowiedzialnością Spółka Komandytowa, z siedzibą w Wejherowie przy ulicy Gdańskiej 13c. Zapraszamy do zapoznania się z naszą polityką prywatności umieszczoną pod linkiem:<br> <a href="https://www.plichta.com.pl/polityka-prywatnosci" class="underline flex flex-wrap">https://www.plichta.com.pl/polityka-prywatnosci</a></p>
                         <button id="btn__top" class="mt-10 px-3 py-2 sm:w-[200px] sm:h-[50px] mx-auto text-white bg-[#190F14] hover:opacity-70 duration-150 btn_submit" type="submit">Umów jazdę próbną</button>
                 </form>
-                <div id="connect-error__top" class="flex flex-col relative w-[90%] h-[25%] bg-[#f78888] mx-auto items-center justify-center my-10 rounded-lg py-4 connect-error hidden">
-                    <button id="close-error__top" class="absolute top-3 left-3 close-error"><img class="w-[10%]" src="img/close.png" alt="przycisk zamknięcia błedu o połączeniu" loading="lazy" width="128px" height="128px"></button>
+                <div id="connect-error__top" class="flex flex-col relative w-[90%] h-[25%] bg-[#f78888] mx-auto items-center justify-center my-10 rounded-lg py-4 connect-error error-pop-up hidden">
+                    <button id="close-error__top" class="absolute top-3 right-3 close-error mr-[-110px]"><img class="w-[10%]" src="img/close.png" alt="przycisk zamknięcia błedu o połączeniu" loading="lazy" width="128px" height="128px"></button>
                     <p class="my-2">Wystąpił błąd podczas wysyłania formularza.</p>
                     <p class="my-2">Prosimy spróbować ponownie za chwilę.</p>
                 </div>
@@ -579,7 +579,7 @@
                 <div class="mt-[15%] dropdown">
                     <input type="text" name="selected_car_list" value="Cupra Formentor" class="hidden">
                         <div class="item__selected flex flex-col sm:flex-row bg-[#F5F5F5] items-center justify-center relative border-solid border-[1px] border-gray-300 sm:px-7 cursor-pointer sm:ml-[50px] mx-auto select-none pb-5 sm:pb-0">
-                            <img id="image-selected" class="image-select sm:ml-[-100px] z-10  image__responsive" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentr" loading="lazy" width="306px" height="139px">
+                            <img id="image-selected" class="image-select sm:ml-[-100px] z-10  image__responsive w-[87%]" src="img/_jcr_content.resiz-dViewPort.scale-5.png" alt="Cupra Formentr" loading="lazy" width="306px" height="139px">
                             <p id="text-select" class="text-select w-[200px] text-center sm:text-left sm:ml-3 pb-3 sm:pb-0">Cupra Formentor</p>
                             <img style="width: 3%;" class="arrow duration-500" src="img/arrow-down_form.svg" alt="Strzałka wyboru">
                     </div>
@@ -660,10 +660,10 @@
                         <p class="mb-7 text-sm flex flex-wrap">Administratorem Twoich danych jest Plichta spółka z ograniczoną odpowiedzialnością Spółka Komandytowa, z siedzibą w Wejherowie przy ulicy Gdańskiej 13c. Zapraszamy do zapoznania się z naszą polityką prywatności umieszczoną pod linkiem:<br> <a href="https://www.plichta.com.pl/polityka-prywatnosci" class="underline flex flex-wrap">https://www.plichta.com.pl/polityka-prywatnosci</a></p>
                         <button id="btn" class="mt-10 px-3 py-2 sm:w-[200px] sm:h-[50px] mx-auto text-white bg-[#190F14] hover:opacity-70 duration-150 btn_submit" type="submit">Umów jazdę próbną</button>
                 </form>
-                <div id="connect-error" class="flex flex-col relative w-[90%] h-[25%] bg-[#f78888] mx-auto items-center justify-center my-10 rounded-lg py-4 connect-error hidden">
-                    <button id="close-error" class="absolute top-3 left-3 close-error"><img class="w-[10%]" src="img/close.png" alt="przycisk zamknięcia błedu o połączeniu" loading="lazy" width="128px" height="128px"></button>
-                    <p class="my-2">Wystąpił błąd podczas wysyłania formularza.</p>
-                    <p class="my-2">Prosimy spróbować ponownie za chwilę.</p>
+                <div id="connect-error" class="flex flex-col relative w-[90%] h-[25%] bg-[#f78888] mx-auto items-center justify-center my-10 rounded-lg py-4 connect-error error-pop-up hidden">
+                    <button id="close-error" class="absolute top-3 right-3 close-error mr-[-110px]"><img class="w-[10%]" src="img/close.png" alt="przycisk zamknięcia błedu o połączeniu" loading="lazy" width="128px" height="128px"></button>
+                    <p class="my-2 text-center">Wystąpił błąd podczas wysyłania formularza.</p>
+                    <p class="my-2 text-center">Prosimy spróbować ponownie za chwilę.</p>
                 </div>
             </div>
         </section>

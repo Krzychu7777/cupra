@@ -238,3 +238,7 @@ header {
 .btn_submit:disabled:hover {
     opacity: 0.3;
 }
+
+.error-pop-up {
+    border-left: 6px solid #ad0707;
+}

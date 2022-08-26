@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form novalidate id="form" class="flex flex-col text-black mt-[6%]" action="" method="GET">
+        <input type="text" id="car-name" name="car_select" value="Cupra Formentor" class="hidden">
+        <div class="relative">
+            <input class="w-full border-b-[1px] border-solid border-[#D5D5D5] bg-[transparent] py-2 mb-7 placeholder-black sm:text-lg focus:outline-none siema" type="text" name="name" id="name" placeholder="Imię*" required minlength="3">
+            <p id="error-name" class="absolute right-0 bottom-0 text-[#FF0000] error" style="display: none;"> wypełnij dane</p>
+            <p id="success-name" class="absolute right-0 top-[15px] text-[#9fd649] name-success"></p>
+        </div>
+        <div class="relative">
+            <input class="w-full border-b-[1px] border-solid border-[#D5D5D5] bg-[transparent] py-2 mb-7 placeholder-black sm:text-lg focus:outline-none siema" type="text" name="last-name" id="lastname" placeholder="Nazwisko (opcjonalnie)" minlength="3">
+            <p id="error-lastname" class="absolute right-0 bottom-0 text-[#FF0000] last-name-error"></p>
+            <p id="success-lastname" class="absolute right-0 top-[15px] text-[#9fd649] last-name-success"></p>
+        </div>
+        <div class="relative">
+            <input class="w-full border-b-[1px] border-solid border-[#D5D5D5] bg-[transparent] py-2 mb-7 placeholder-black sm:text-lg focus:outline-none siema" type="email" name="email" id="email" placeholder="adres e-mail*" required>
+            <p id="error-email" class="absolute right-0 bottom-0 text-[#FF0000] error" style="display: none;">wypełnij dane</p>
+            <p id="success-email" class="absolute right-0 top-[15px] text-[#9fd649] email-success"></p>
+        </div>
+        <div class="relative">
+            <input class="w-full border-b-[1px] border-solid border-[#D5D5D5] bg-[transparent] py-2 mb-7 placeholder-black sm:text-lg focus:outline-none siema" type="tel" name="phone" id="phone" placeholder="Nr.telefonu*" required pattern="[0-9]{3}[0-9]{3}[0-9]{3}">
+            <p id="error-phone" class="absolute right-0 bottom-0 text-[#FF0000] error" style="display: none;"></p>
+            <p id="success-phone" class="absolute right-0 top-[15px] text-[#9fd649] phone-success"></p>
+        </div>
+            <p class="font-light">*pole wymagane</p>
+            <p class="my-7 text-sm flex flex-wrap">Wysłanie uzupełnionego formularza oznacza Twoją zgodę na kontakt w celu przedstawienia informacji handlowej w wybrany przez Ciebie sposób w związku <a href="#" class="underline">Czytaj więcej</a></p>
+            <p class="mb-7 text-sm flex flex-wrap">Prosimy Cię też o wyrażenie poniższych zgód w celu możliwości przedstawiania Ci atrakcyjnych ofert / promocji produktów, akcesoriów i usług marki CUPRA w przyszłości.</p>
+            <p id="error-agree" class="mb-7 text-sm flex flex-wrap text-[#FF0000] agree-error">
+            <div class="flex flex-row justify-start space-x-2 text-sm items-start min-h-[10px]">
+                <input type="checkbox" id="dane-osobowe" name="private-politics">
+                <label for="dane-osobowe">Zgadzam się na przetwarzanie moich danych osobowych przez Plichta spółka z ograniczoną odpowiedzialnością Spółka Komandytowa w celu przedstawienia mi informacji marketingowych i handlowych dotyczących produktów i usług marki CUPRA oraz innych powiązanych z marką CUPRA akcesoriów, produktów i usług motoryzacyjnych za pomocą:</label>
+            </div>
+            <p id="error-contact" class="mt-5 mb-[-10px] text-sm flex flex-wrap text-[#FF0000] contact-error"></p>
+            <div class="flex flex-row justify-start space-x-2 text-sm items-start min-h-[10px] my-8">
+                <input type="checkbox" id="mail" name="contact[]" class="" value="mail">
+                <label for="mail">E-Mail</label>
+            
+            </div>
+            <div class="flex flex-row justify-start space-x-2 text-sm items-start min-h-[10px] mb-8">
+                <input type="checkbox" id="contact-phone" name="contact[]" class="" value="phone" class="checked">
+                <label for="phone">Telefon</label>
+            </div>
+            <div class="flex flex-row justify-start space-x-2 text-sm items-start min-h-[10px] mb-8">
+                <input type="checkbox" id="message" name="contact[]" class="" value="message">
+                <label for="message">Wiadomości SMS/MMS</label>
+            </div>
+        </p>
+            <p class="mb-7 text-sm flex flex-wrap">Masz prawo do wglądu, modyfikacji, ograniczenia przetwarzania i usunięcia swoich danych oraz do wycofania w każdym momencie swojej zgody.</p>
+            <p class="mb-7 text-sm flex flex-wrap">Twoje dane będą przetwarzane tylko w stopniu umożliwiającym realizację wymienionego celu.</p>
+            <p class="mb-7 text-sm flex flex-wrap">Administratorem Twoich danych jest Plichta spółka z ograniczoną odpowiedzialnością Spółka Komandytowa, z siedzibą w Wejherowie przy ulicy Gdańskiej 13c. Zapraszamy do zapoznania się z naszą polityką prywatności umieszczoną pod linkiem:<br> <a href="https://www.plichta.com.pl/polityka-prywatnosci" class="underline flex flex-wrap">https://www.plichta.com.pl/polityka-prywatnosci</a></p>
+            <button id="btn" class="mt-10 px-3 py-2 sm:w-[200px] sm:h-[50px] mx-auto text-white bg-[#190F14] hover:opacity-70 duration-150" type="submit">Umów jazdę próbną</button>
+    </form>
+
+
+    <script src="formularz.js"></script>
+</body>
+</html>
